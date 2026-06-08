@@ -1,6 +1,6 @@
 // js/detalles.js
 
-// 1. Base de datos con la información estructurada de tus 5 productos
+// 1. Base de datos con la información estructurada de los 5 productos para optimizar y no hacer 5 html diferentes.
 const baseDeDatos = {
     emma: {
         titulo: "Emma Elite",

@@ -1,18 +1,17 @@
-/* ==========================================
-   CATÁLOGO DE PRODUCTOS (GRID)
-   ========================================== */
-.products-section {
+/* sección de productos */
+.seccion-productos {
     padding: 60px 8%;
     text-align: center;
 }
 
-.section-title h2 {
+/* titulo de la sección */
+.titulo-seccion h2 {
     font-size: 36px;
     color: #0b2240;
     margin-bottom: 10px;
 }
 
-.section-title p {
+.titulo-seccion p {
     color: #556575;
     margin-bottom: 40px;
 }
@@ -25,7 +24,6 @@
     margin: 0 auto;
 }
 
-/* TARJETAS COMPONENTES */
 .tarjeta-producto {
     background-color: white;
     border-radius: 16px;
@@ -42,7 +40,6 @@
     box-shadow: 0 12px 24px rgba(0,0,0,0.1);
 }
 
-/* Estilos de las imágenes del catálogo controlados 100% desde CSS */
 .tarjeta-producto img {
     width: 100%;
     height: 180px;
@@ -64,7 +61,8 @@
     margin-bottom: 20px;
 }
 
-.tarjeta-producto .price {
+/* precio */
+.tarjeta-producto .precio-tarjeta {
     font-size: 18px;
     font-weight: bold;
     color: #0066df;
@@ -72,7 +70,8 @@
     display: block;
 }
 
-.btn-buy {
+/* boton comprar */
+.btn-comprar {
     background-color: #0b2240;
     color: white;
     padding: 12px;
@@ -83,6 +82,6 @@
     transition: background 0.2s;
 }
 
-.btn-buy:hover {
+.btn-comprar:hover {
     background-color: #0066df;
 }

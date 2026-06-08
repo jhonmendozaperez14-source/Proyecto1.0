@@ -1,6 +1,4 @@
-/* ==========================================
-   CONFIGURACIÓN GENERAL Y RESETS
-   ========================================== */
+/* CONFIGURACIÓN GENERAL Y RESETS */
 * {
     margin: 0;
     padding: 0;
@@ -18,9 +16,7 @@ a {
     text-decoration: none;
 }
 
-/* ==========================================
-   BARRA DE NAVEGACIÓN GLOBAL
-   ========================================== */
+/* BARRA DE NAVEGACIÓN GLOBAL */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -37,14 +33,14 @@ a {
     color: #0b2240;
 }
 
-.nav-links a {
+.enlaces-navegacion a {
     color: #6b09e4;
     margin: 0 15px;
     font-weight: 500;
     transition: color 0.3s;
 }
 
-.nav-links a.active, .nav-links a:hover {
+.enlaces-navegacion a.active, .enlaces-navegacion a:hover {
     color: #0f2547;
     font-weight: 600;
 }
@@ -63,7 +59,6 @@ a {
     background-color: #a86d00;
 }
 
-/* RESPONSIVE DESIGN GLOBAL (Celulares) */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

@@ -1,6 +1,4 @@
-/* ==========================================
-   PANTALLA BIENVENIDA (HERO SECTION)
-   ========================================== */
+/*PANTALLA BIENVENIDA (SECCIÓN PORTADA)*/
 .bienvenida {
     display: flex;
     align-items: center;
@@ -38,12 +36,13 @@
     margin-bottom: 30px;
 }
 
-.hero-actions {
+/* acciones-inicio */
+.acciones-inicio {
     display: flex;
     gap: 15px;
 }
 
-.btn-primary {
+.btn-principal {
     background-color: #0066df;
     color: white;
     padding: 12px 28px;
@@ -52,11 +51,11 @@
     transition: background 0.3s;
 }
 
-.btn-primary:hover {
+.btn-principal:hover {
     background-color: #004fb0;
 }
 
-.btn-secondary {
+.btn-secundario {
     border: 2px solid #a3b8cc;
     color: #556575;
     padding: 12px 28px;
@@ -65,7 +64,7 @@
     transition: background 0.3s;
 }
 
-.btn-secondary:hover {
+.btn-secundario:hover {
     background-color: #e2eaf4;
 }
 
@@ -86,9 +85,7 @@
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* ==========================================
-   FRANJA DE CONFIANZA
-   ========================================== */
+/* FRANJA DE CONFIANZA*/
 .franja-confianza {
     background-color: #0b2240;
     color: white;
@@ -120,9 +117,7 @@
     color: #a3b8cc;
 }
 
-/* ==========================================
-   SECCIÓN TECNOLOGÍA É INGENIERÍA
-   ========================================== */
+/*SECCIÓN TECNOLOGÍA É INGENIERÍA */
 .tecnologia {
     padding: 80px 8%;
     background-color: white;
