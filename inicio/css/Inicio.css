@@ -1,0 +1,262 @@
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7fc;
+    color: #0f2547;
+    scroll-behavior: smooth;
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    color: #0b2240;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #6b09e4;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: #0f2547;
+    font-weight: 600;
+}
+
+.btn-ofertas {
+    background-color: #c98200;
+    color: white;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.btn-ofertas:hover {
+    background-color: #a86d00;
+}
+
+/* PANTALLA BIENVENIDA */
+.bienvenida {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 8% 80px 8%;
+    gap: 40px;
+}
+
+.texto-principal {
+    flex: 1;
+    max-width: 550px;
+}
+
+.badge {
+    background-color: #e2eaf4;
+    color: #556a85;
+    padding: 6px 16px;
+    border-radius: 15px;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.texto-principal h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #0b2240;
+}
+
+.texto-principal p {
+    color: #556575;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: #0066df;
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #004fb0;
+}
+
+.btn-secondary {
+    border: 2px solid #a3b8cc;
+    color: #556575;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #e2eaf4;
+}
+
+.imagen-portada {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imagen-portada img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* Prepara el efecto hover interactivo */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* EFECTO HOVER INTERACTIVO EN LA PORTADA :) */
+.imagen-portada img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* NUEVA FRANJA DE CONFIANZA */
+.franja-confianza {
+    background-color: #0b2240;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 8%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item-confianza {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icono-c {
+    font-size: 30px;
+}
+
+.item-confianza h4 {
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.item-confianza p {
+    font-size: 13px;
+    color: #a3b8cc;
+}
+
+/* SECCIÓN TECNOLOGÍA*/
+.tecnologia {
+    padding: 80px 8%;
+    background-color: white;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.imagen {
+    flex: 1;
+}
+
+.imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.detalles {
+    flex: 1;
+}
+
+.subtitulo {
+    color: #0066df;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.detalles h2 {
+    font-size: 36px;
+    color: #0b2240;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.detalles p {
+    color: #556575;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.lista-capas {
+    list-style: none;
+}
+
+.lista-capas li {
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 3px solid #0066df;
+    color: #334455;
+    font-size: 15px;
+    line-height: 1.5;
+}
+/* Espaciado para los bloques de materiales */
+.materiales-por-modelo {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Separa el bloque Premium del bloque de Muelles */
+}
+
+.bloque-material h4 {
+    color: #0066df;
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
