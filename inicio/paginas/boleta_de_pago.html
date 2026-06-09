@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleta de Pago</title>
+    <link rel="stylesheet" href="../css/boleta_de_pago.css">
+</head>
+<body>
+<div class="boleta">
+
+    <h1>Boleta de Compra</h1>
+
+    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+    <p><strong>Correo:</strong> <span id="correo"></span></p>
+    <p><strong>Dirección:</strong> <span id="direccion"></span></p>
+    <p><strong>Producto:</strong> <span id="producto"></span></p>
+<p><strong>Total Pagado:</strong> <span id="precio"></span></p>
+   <script>
+document.getElementById("nombre").textContent =
+localStorage.getItem("Nombre");
+
+document.getElementById("correo").textContent =
+localStorage.getItem("Correo");
+
+document.getElementById("direccion").textContent =
+localStorage.getItem("Direccion");
+
+document.getElementById("producto").textContent =
+localStorage.getItem("Producto");
+
+document.getElementById("precio").textContent =
+localStorage.getItem("Precio");
+</script>
+<hr>
+
+<h2>¡Gracias por su compra!</h2>
+
+<p>
+Gracias por confiar en SueñoPerfecto.
+Esperamos que disfrute de un descanso cómodo y reparador.
+</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de pagos</title>
+    <link rel="stylesheet" href="../css/centro_pagos.css">
+</head>
+
+<body>
+    <!-- BANNER -->
+    <div class="banner">
+        <img class="imagen1" src="../img/pngwing.com.png" alt="Carrito de compras">
+        <h1 class="h1">
+            Centro de pagos
+        </h1>
+         <h2 class="marca">SueñoPerfecto</h2>
+         <img class="imagen2" src="../img/cama-individual.png" alt="">
+    </div>
+    <!-- METODOS DE PAGO -->
+    <h2 class="h2-pagos">
+        Metodos de pago aceptados
+    </h2>
+    <div class="pagos">
+        <img src="../img/images.png" alt="">
+        <img src="../img/63db0e7a5ff55.png" alt="">
+        <img src="../img/download.png" alt="">
+    </div>
+    <!-- DATOS DE TARJETA -->
+    <div class="tarjeta">
+        <label for="Numero de tarjeta">Numero de tarjeta :</label>
+        <br>
+        <input type="text" name="Numero" placeholder="XXXX-XXXX-XXXX-XXXX">
+        <br>
+        <Label for="Fecha de vencimiento">Fecha de vencimiento :</Label>
+        <br>
+        <input type="text" name="Fecha" placeholder="XX/XX">
+    </div>
+    <div class="Datos-cliente">
+        <!-- DATOS DEL CLIENTE -->
+        <label for="Nombre">Nombre del cliente</label>
+        <br>
+       <input type="text" id="Nombre" placeholder="Nombres">
+        <br>
+        <label for="Correo">Correo Electronico</label>
+        <br>
+       <input type="text" id="Correo" placeholder="@gmail.com">
+        <br>
+        <label for="Direccion">Direccion</label>
+        <br>
+        <input type="text" id="Direccion" placeholder="">
+    </div>
+    <br>
+    <div class="botones">
+    <button class="btn-confirmar" onclick="generarBoleta()">
+        Confirmar Pago
+    </button>
+
+    <a href="modelos.html">
+        <button class="btn-borrar">Cancelar</button>
+    </a>
+</div>
+<script>
+function generarBoleta() {
+
+    localStorage.setItem(
+        "Nombre",
+        document.getElementById("Nombre").value
+    );
+
+    localStorage.setItem(
+        "Correo",
+        document.getElementById("Correo").value
+    );
+
+    localStorage.setItem(
+        "Direccion",
+        document.getElementById("Direccion").value
+    );
+
+    window.location.href = "boleta_de_pago.html";
+}
+</script>
+    </body>
+    </html>

@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 120%);
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+.marca{
+    color: white;
+    margin: 0;
+    font-size: 40px;
+}
+
+body{
+    background-image: url("../img/WhatsApp\ Image\ 2026-06-05\ at\ 5.42.31\ PM.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.imagen1 {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+.imagen2{
+    width: 90px;
+    height: 90px;
+    margin-left: 70px;
+    flex-shrink: 9;
+}
+
+.h1 {
+    text-align: left;
+    font-size: 50px;
+    margin: 0;
+    font-weight: normal;
+    text-decoration: none;
+    color: white;
+    flex: 1;
+}
+.h2-pagos{
+    margin-left: 30px;
+    font-size:40px;
+}
+.metodo{
+    margin-left: 20px;
+    display: flex;
+}
+.pagos img {
+    width: 60px;
+    height: 40px;
+    
+    gap: 10px;
+    margin-right: -1%;
+    margin-left: 30px;
+    border:2px solid blue;
+    border-color: blue;
+}
+.tarjeta{
+    margin-left: 30px;
+}
+.tarjeta input{
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+
+    border: 2px solid #667eea;
+    border-radius: 10px;
+
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    font-size: 14px;
+     box-shadow: 0 0 8px rgba(102,126,234,0.4);
+}
+.Datos-cliente{
+    margin-left: 30px;
+    display: block;
+}
+.Datos-cliente input{
+  width: 300px;
+    height: 40px;
+    padding-left: 10px;
+
+    border: 2px solid #667eea;
+    border-radius: 10px;
+
+    box-shadow: 0 0 8px rgba(102,126,234,0.4);
+}
+.botones button{
+    width: 200px;
+    height: 45px;
+
+    margin-left: 30px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #667eea;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}

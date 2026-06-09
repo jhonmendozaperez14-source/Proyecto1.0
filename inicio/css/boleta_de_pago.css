@@ -1,0 +1,35 @@
+body{
+    background-color: #f2f4f8;
+    font-family: Arial, sans-serif;
+}
+
+.boleta{
+    width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+}
+
+.boleta h1{
+    text-align: center;
+    color: #667eea;
+}
+
+.boleta h2{
+    text-align: center;
+}
+
+.boleta h3{
+    color: #764ba2;
+}
+
+.boleta p{
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+hr{
+    margin: 20px 0;
+}

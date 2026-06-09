@@ -43,25 +43,32 @@ const baseDeDatos = {
 const parametrosURL = new URLSearchParams(window.location.search);
 const idProducto = parametrosURL.get('id');
 
-// 3. Renderizar los datos dinámicamente si el producto existe
 if (idProducto && baseDeDatos[idProducto]) {
+
     const prod = baseDeDatos[idProducto];
-    
+
+    const botonComprar = document.querySelector('.btn-ordenar');
+
+    botonComprar.addEventListener('click', function() {
+        localStorage.setItem("Producto", prod.titulo);
+        localStorage.setItem("Precio", prod.precio);
+    });
+
     document.getElementById('item-titulo').textContent = prod.titulo;
     document.getElementById('item-precio').textContent = prod.precio;
     document.getElementById('item-descripcion').textContent = prod.desc;
     document.getElementById('item-imagen').src = prod.imagen;
     document.getElementById('item-imagen').alt = prod.titulo;
 
-    // Limpiar y poblar las características técnicas
     const ulCaracteristicas = document.getElementById('item-caracteristicas');
     ulCaracteristicas.innerHTML = "";
+
     prod.caract.forEach(texto => {
         const li = document.createElement('li');
         li.innerHTML = `<strong>${texto.split(':')[0]}:</strong>${texto.split(':')[1]}`;
         ulCaracteristicas.appendChild(li);
     });
+
 } else {
-    // Si el ID no existe o cambian la URL a mano, regresa al catálogo
     window.location.href = "modelos.html";
 }
