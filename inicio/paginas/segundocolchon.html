@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/estilocolchon1.css">
+    <title>Document</title>
+</head>
+<script>
+function agregarAlCarrito() {
+    
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    
+    carrito.push({
+        nombre: "Colchón Premium Comfort",
+        precio: 599
+    });
+
+    
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    alert("Producto agregado al carrito.");
+}
+</script>
+<body>
+    
+    <header>
+        <h1>Colchón Ortopédico
+ Comfort</h1>
+        <p>Descanso de calidad para toda la familia</p>
+    </header>
+
+    <div class="contenedor">
+
+        <div class="imagen">
+            <img src="../estilos/colchon 2.webp" alt="Colchón Ortopédico
+">
+        </div>
+
+        <div class="info">
+            <h2>Descripción del Producto</h2>
+            <p>
+                El Colchón Ortopédico
+     Comfort está diseñado para brindar el máximo confort y soporte durante toda la noche.
+            </p>
+
+            
+             <p class="precio-antiguo"> S/ 999</p>
+            <p class="precio">S/ 599</p>
+
+            <h3>Especificaciones</h3>
+            <ul>
+                <li>✔ Tamaño: Queen Size (160 cm x 190 cm)</li>
+                <li>✔ Altura: 25 cm</li>
+                <li>✔ Tecnología de espuma viscoelástica</li>
+                <li>✔ Sistema de resortes encapsulados</li>
+                <li>✔ Tela antiácaros e hipoalergénica</li>
+                <li>✔ Garantía de 15 años</li>
+                <li>✔ Capacidad máxima: 300 kg</li>
+            </ul>
+
+           <a href="../pagina/chequecolchon2.html" class="boton">COMPRAR AHORA</a>
+            <button onclick="agregarAlCarrito()" class="boton">Agregar al Carrito</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Colchones Sueño Perfecto - Todos los derechos reservados</p>
+        <a href="../oferta.html">VOLVER</a>
+       
+    </footer>
+
+
+
+</body>
+</html>

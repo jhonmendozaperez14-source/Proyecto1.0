@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+     <header>
+      
+        <h1>🛏️ Mega Ofertas de Colchones</h1>
+        <p>Descansa mejor al mejor precio</p>
+    </header>
+
+    
+
+    <section class="banner">
+        <h2>Hasta 50% de descuento</h2>
+        <p>Promoción válida por tiempo limitado</p>
+        <h1>Comprar Ahora!!!!</h1>
+    </section>
+
+    <section class="productos">
+
+        <div class="card">
+            <img src="../pagina/estilos/colchon portada.jpg" alt="Colchón Premium">
+            <h3>Colchón Premium</h3>
+            <p class="precio-antiguo">S/ 1,299</p>
+            <p class="precio">S/ 799</p>
+            <button> <a href="../pagina/colchones/primercolchon.html"target="_black">Ver Oferta</a></button>
+             <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
+            
+        </div>
+
+        <div class="card">
+            <img src="../pagina/estilos/colchon 2.webp" alt="Colchón Ortopédico">
+            <h3>Colchón Ortopédico</h3>
+            <p class="precio-antiguo">S/ 999</p>
+            <p class="precio">S/ 599</p>
+            <button><a href="../pagina/colchones/segundocolchon.html"target="_black">Ver Oferta</a></button>
+             <button onclick="agregar('Colchón Premium',599)">Agregar al carrito</button>
+        </div>
+
+        <div class="card">
+            <img src="../pagina/estilos/images.jpeg" alt="Colchón Memory Foam">
+            <h3>Colchón Memory Foam</h3>
+            <p class="precio-antiguo">S/ 1,599</p>
+            <p class="precio">S/ 999</p>
+            <button><a href="../pagina/colchones/tercercolchon.html"target="_black">Ver Oferta</a></button>
+             <button onclick="agregar('Colchón Premium',999)">Agregar al carrito</button>
+        </div>
+         <div class="card">
+            <img src="../pagina/estilos/images 2.jpeg" alt="Colchón muelles Bonell">
+            <h3>Colchón muelles Bonell</h3>
+            <p class="precio-antiguo">S/ 1,699</p>
+            <p class="precio">S/ 1,199</p>
+            <button><a href="../pagina/colchones/cuartocolchon.html"target="_black">Ver Oferta</a></button>
+             <button onclick="agregar('Colchón Premium',1199)">Agregar al carrito</button>
+        </div>
+        
+         <div class="card">
+            <img src="../pagina/estilos/imagen4.jpeg" alt="Colchón Memory Latex">
+            <h3>Colchón Memory Latex</h3>
+            <p class="precio-antiguo">S/ 2,599</p>
+            <p class="precio">S/ 1,999</p>
+            <button><a href="../pagina/colchones/quintocolchon.html"target="_black">Ver Oferta</a></button>
+             <button onclick="agregar('Colchón Premium',1999)">Agregar al carrito</button>
+        </div>
+
+    </section>
+    <div class="carrito">
+        <h2>🛒 Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p class="total">Total: S/ <span id="total">0</span></p>
+       
+
+<button onclick="vaciarCarrito()">
+    Vaciar carrito
+</button>
+    </div>
+
+
+    <footer>
+        <p>© 2026 Colchones Sueño Perfecto - Todos los derechos reservados.</p>
+    </footer>
+    
+   <script>
+  
+function cargarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    const totalElemento = document.getElementById("total");
+
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let total = 0;
+
+    lista.innerHTML = "";
+
+    carrito.forEach((producto, indice) => {
+        const item = document.createElement("li");
+
+        item.innerHTML = `
+            ${producto.nombre} - S/ ${producto.precio}
+            <button onclick="eliminarProducto(${indice})">
+                Eliminar
+            </button>
+        `;
+
+        lista.appendChild(item);
+        total += producto.precio;
+    });
+
+    totalElemento.textContent = total;
+}
+
+function agregar(nombre, precio) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    carrito.push({
+        nombre: nombre,
+        precio: precio
+    });
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    cargarCarrito();
+}
+function eliminarProducto(indice) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    
+    carrito.splice(indice, 1);
+
+    
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    
+    cargarCarrito();
+}
+function vaciarCarrito() {
+    localStorage.removeItem("carrito");
+    cargarCarrito();
+}
+
+cargarCarrito();
+const lista = document.getElementById("lista-carrito");
+const totalElemento = document.getElementById("total");
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let total = 0;
+
+lista.innerHTML = "";
+
+carrito.forEach(producto => {
+
+    
+    let subtotal = producto.precio * producto.cantidad;
+
+    
+    total += subtotal;
+
+    lista.innerHTML += `
+        <li>
+            <strong>${producto.nombre}</strong><br>
+            Precio: S/ ${producto.precio}<br>
+            Cantidad: ${producto.cantidad}<br>
+            Subtotal: <strong>S/ ${subtotal}</strong>
+        </li>
+    `;
+});
+
+
+totalElemento.textContent = total;
+</script>
+</body>
+</html>

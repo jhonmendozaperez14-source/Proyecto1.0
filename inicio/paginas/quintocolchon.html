@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/estilocolchon1.css">
+    <title>Document</title>
+</head>
+<script>
+function agregarAlCarrito() {
+    
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    
+    carrito.push({
+        nombre: "Colchón Premium Comfort",
+        precio: 1999
+    });
+
+    
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    alert("Producto agregado al carrito.");
+}
+</script>
+<body>
+    
+    <header>
+        <h1>Colchón Memory Latex</h1>
+        <p>Descanso de calidad para toda la familia</p>
+    </header>
+
+    <div class="contenedor">
+
+        <div class="imagen">
+            <img src="../estilos/imagen4.jpeg" alt="Colchón Memory Latex
+">
+        </div>
+
+        <div class="info">
+            <h2>Descripción del Producto</h2>
+            <p>
+                El Colchón Memory Latex está diseñado para brindar el máximo confort y soporte durante toda la noche.
+            </p>
+
+            
+             <p class="precio-antiguo">   S/ 2,599</p>
+            <p class="precio">S/ 1,999</p>
+
+            <h3>Especificaciones</h3>
+            <ul>
+                <li>✔ Tamaño: Queen Size (180 cm x 160 cm)</li>
+                <li>✔ Altura: 40 cm</li>
+                <li>✔ Tecnología de espuma viscoelástica</li>
+                <li>✔ Sistema de resortes encapsulados</li>
+                <li>✔ Tela antiácaros e hipoalergénica</li>
+                <li>✔ Garantía de 15 años</li>
+                <li>✔ Capacidad máxima: 225 kg</li>
+            </ul>
+
+            <a href="../pagina/chequecolchon6.html" class="boton">COMPRAR AHORA</a>
+             <button onclick="agregarAlCarrito()" class="boton">Agregar al Carrito</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Colchones Sueño Perfecto - Todos los derechos reservados</p>
+        <a href="../oferta.html">VOLVER</a>
+    </footer>
+
+
+
+</body>
+</html>

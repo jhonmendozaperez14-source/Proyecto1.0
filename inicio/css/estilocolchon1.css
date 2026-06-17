@@ -1,0 +1,89 @@
+
+ body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contenedor{
+            width: 80%;
+            margin: 30px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .imagen{
+            text-align: center;
+            padding: 20px;
+        }
+
+        .imagen img{
+            width: 70%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .info{
+            padding: 20px;
+        }
+
+        .precio-antiguo{
+            color: gray;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration:line-through
+        }
+        .precio{
+    font-size:35px;
+    color:#e60023;
+    font-weight:bold;
+    margin:10px 0;
+
+}
+       
+
+
+        ul{
+            line-height: 1.8;
+        }
+
+        .boton{
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .boton:hover{
+            background-color: #218838;
+        }
+        .carrito{
+    background:white;
+    margin-top:30px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+        footer{
+            text-align: center;
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+       
