@@ -18,13 +18,15 @@ body{
 }
 
 header{
+    height: 90px;
     background:#003366;
     color:white;
     text-align:center;
-    padding:30px;
+    padding:15px;
 }
 
 .banner{
+    height: 180px;
     background:linear-gradient(135deg,#0066cc,#00aaff);
     color:white;
     text-align:center;
@@ -108,7 +110,7 @@ header{
 
 footer{
     background:#222;
-    color:white;
+    color:rgb(255, 255, 255);
     text-align:center;
     padding:20px;
 }
@@ -117,4 +119,24 @@ section div {
     height: 30%;
     margin: auto;
     
+}
+/*barra de navegacion*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.enlaces-navegacion a {
+    color: #6b09e4;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-decoration: none;
+   
+}
+
+.enlaces-navegacion a.active, .enlaces-navegacion a:hover {
+    color: #0f2547;
+    font-weight: 600;
 }

@@ -117,11 +117,12 @@
 /* Imagen de beneficios cargada desde CSS */
 .imagen-beneficios {
     flex: 1;
+    width: 290px;
     height: 400px;
     background-size: cover;
     background-position: center;
     border-radius: 20px;
-    box-shadow: 0 10px 30px black;
+   
 }
 
 .detalles {
@@ -137,7 +138,7 @@
 }
 
 .detalles p {
-    color: #9a0be7;
+    color: #5a545e;
     margin-bottom: 25px;
     line-height: 1.6;
     font-size: 15px;
@@ -173,7 +174,7 @@
 .beneficios{
     display: flex;
     width: 25%;
-    background-color: rgb(114, 13, 230);
+    background-color: rgb(37, 7, 210);
     border-radius: 20px;
     padding: 4px;
     background-position: center;
