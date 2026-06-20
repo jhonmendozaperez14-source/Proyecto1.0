@@ -1,9 +1,48 @@
+/*ESTILOS GENERALES Y MÁRGENES*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcfcfc;
+    color: #333;
+}
+
+/*Espaciados controlados para que el contenido no toque los bordes*/
+.bienvenida, .modelos-destacados, .tecnologia, .testimonios-seccion {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+/*menu*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.enlaces-navegacion a {
+    margin: 0 22px;
+    font-weight: 500;
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.enlaces-navegacion a:hover, .enlaces-navegacion a.active {
+    color: #000000;
+}
+
+/*Bienvenida*/
 .bienvenida {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 8% 80px 8%;
-    gap: 40px;
+    gap: 50px;
+    min-height: 65vh;
 }
 
 .texto-principal {
@@ -11,174 +50,311 @@
     max-width: 550px;
 }
 
-.badge {
-    background-color: #e2eaf4;
-    color: #556a85;
-    padding: 6px 16px;
-    border-radius: 15px;
-    font-size: 13px;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
 .texto-principal h1 {
-    font-size: 48px;
+    font-size: 48px; /* Corregido para que destaque como título principal */
     line-height: 1.2;
-    margin-bottom: 20px;
-    color: #0b2240;
+    color: #1e272e;
+    margin: 20px 0;
 }
 
 .texto-principal p {
-    color: #556575;
-    font-size: 16px;
+    font-size: 18px; /* Ajustado para que el párrafo sea legible */
+    color: #57606f;
     line-height: 1.6;
     margin-bottom: 30px;
 }
 
-/* acciones-inicio */
-.acciones-inicio {
+.contenedor-portada {
+    flex: 1.3;
     display: flex;
-    gap: 15px;
+    justify-content: center;
 }
 
-.btn-principal {
-    background-color: #0066df;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: background 0.3s;
-}
-
-.btn-principal:hover {
-    background-color: #004fb0;
-}
 .imagen-portada {
-    flex: 1;
-    height: 350px;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(8, 8, 8, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
-.imagen-portada:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px black;
+/*modelos favoritos*/
+.modelos-destacados {
+    padding: 60px 40px;
+    background-color: #f8fafc;
 }
 
-/* FRANJA DE CONFIANZA*/
-.franja-confianza {
-    background-color: #0b2240;
-    color: white;
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo-seccion h2 {
+    font-size: 35px; /* Tamaño ideal para títulos de sección */
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.grid-destacados {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 30px 8%;
+    justify-content: center;
+    gap: 30px;
     flex-wrap: wrap;
-    gap: 20px;
-}
-
-.item-confianza {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.icono-c {
-    font-size: 30px;
-}
-
-.item-confianza h4 {
-    font-size: 16px;
-    margin-bottom: 2px;
-}
-
-.item-confianza p {
-    font-size: 13px;
-    color: #a3b8cc;
-}
-
-/*SECCIÓN TECNOLOGÍA É INGENIERÍA */
-.tecnologia {
-    padding: 80px 8%;
-    background-color: white;
-}
-
-.contenedor {
-    display: flex;
-    align-items: center;
-    gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Imagen de beneficios cargada desde CSS */
-.imagen-beneficios {
-    flex: 1;
-    width: 290px;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-   
+.tarjeta-destino {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    max-width: 340px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease;
 }
 
-.detalles {
-    flex: 1;
+.tarjeta-destino:hover {
+    transform: translateY(-5px);
 }
 
-
-.detalles h2 {
-    font-size: 36px;
-    color: #0b2240;
-    margin-bottom: 20px;
-    line-height: 1.2;
+.tarjeta-destino img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
 
-.detalles p {
-    color: #5a545e;
-    margin-bottom: 25px;
-    line-height: 1.6;
-    font-size: 15px;
+/*targetas de los modelos favoritos*/
+.tarjeta-info {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.lista-capas {
-    list-style: none;
+.tarjeta-info h3 {
+    font-size: 21px;
+    color: #1e293b;
+    margin: 0 0 10px 0;
 }
 
-.lista-capas li {
-    margin-bottom: 15px;
-    padding-left: 15px;
-    border-left: 3px solid #0066df;
-    color: #334455;
-    font-size: 15px;
+.tarjeta-info p {
+    font-size: 15px; 
+    color: #64748b;
     line-height: 1.5;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+.precio-destacado {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.btn-secundario {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background: #111111;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-secundario:hover {
+    background: #333333;
+}
+
+.tag-popular, .tag-premium {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    z-index: 2;
+    text-transform: uppercase;
+}
+.tag-popular { background: #e74c3c; }
+.tag-premium { background: #f39c12; }
+
+/*seccion veneficios*/
+.tecnologia {
+    background-color: #ffffff;
+    border-radius: 24px;
+}
+
+.textob {
+    font-size: 35px; 
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1e272e;
+}
+
+.tecnologia .contenedor {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.media-beneficios {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.imagen-beneficios, .video-beneficios {
+    width: 100%;
+    height: 270px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.tecnologia .detalles {
+    flex: 1;
+}
+
+.tecnologia .detalles h2 {
+    font-size: 32px; 
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.tecnologia .detalles p {
+    font-size: 17px; 
+    color: #57606f;
+    line-height: 1.6;
+    margin-bottom: 25px;
 }
 
 .materiales-por-modelo {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
 .bloque-material h4 {
-    color: #0066df;
-    font-size: 16px;
-    margin-bottom: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    color: #1e3a8a;
+    font-size: 18px; 
+    margin-bottom: 8px;
 }
-.beneficios{
+
+.lista-capas {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-capas li {
+    font-size: 15px; 
+    color: #57606f;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.lista-capas li strong {
+    color: #0f172a;
+}
+
+/*seccion testimonios*/
+.testimonios-seccion {
+    background-color: #f8fafc;
+    text-align: center;
+}
+
+.grid-testimonios {
     display: flex;
-    width: 25%;
-    background-color: rgb(37, 7, 210);
-    border-radius: 20px;
-    padding: 4px;
-    background-position: center;
-    color: rgb(6, 228, 180);
-    border: 3px solid black;
-    height: auto;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.tarjeta-testimonio {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 450px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+/*franja confianza*/
+.franja-confianza-footer {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 45px 40px 25px 40px;
+    margin-top: 40px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+.fila-beneficios-final {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.item-confianza {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icono-c {
+    font-size: 28px; 
+}
+
+.item-confianza h4 {
+    margin: 0;
+    font-size: 16px; 
+}
+
+.item-confianza p {
+    margin: 2px 0 0 0;
+    font-size: 14px; 
+    color: #94a3b8;
+}
+
+.fila-contacto-final {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.columna-footer {
+    flex: 1;
+    min-width: 220px;
+}
+
+.columna-footer h3 { font-size: 19px; margin-bottom: 12px; } /* Convertido a px */
+.columna-footer h4 { font-size: 16px; margin-bottom: 12px; } /* Convertido a px */
+.columna-footer p, .columna-footer a { color: #94a3b8; font-size: 14px; margin-bottom: 8px; text-decoration: none; } /* Convertido a px */
+.columna-footer a:hover { color: #ffffff; }
+
+.barra-copyright {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #1e293b;
+    font-size: 13px; /* Tamaño ideal de copyright */
+    color: #64748b;
 }
