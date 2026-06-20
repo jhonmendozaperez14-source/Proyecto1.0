@@ -7,16 +7,28 @@
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
-     <header>
-      
-        <h1>🛏️ Mega Ofertas de Colchones</h1>
-        <p>Descansa mejor al mejor precio</p>
+    <div>
+       <header class="navbar">
+        <div class="logo">
+            <span class="icon">🛏️</span>
+            <strong>SueñoPerfecto</strong>
+        </div>
+        <nav class="enlaces-navegacion">
+            <a href="inicio.html">Inicio</a>
+            <a href="modelos.html" class="active">Modelos</a>
+        </nav>
+        <div class="nav-button">
+            <a href="../paginas/oferta.html" class="btn-ofertas">Ofertas</a>
+        </div>
+        </div>
     </header>
-
+    
     
 
     <section class="banner">
-        <h2>Hasta 50% de descuento</h2>
+         <h1>🛏️ Mega Ofertas de Colchones</h1>
+        <p>Descansa mejor al mejor precio</p>
+       
         <p>Promoción válida por tiempo limitado</p>
         <h1>Comprar Ahora!!!!</h1>
     </section>
@@ -34,7 +46,7 @@
         </div>
 
         <div class="card">
-            <img src="../pagina/estilos/colchon 2.webp" alt="Colchón Ortopédico">
+            <img src="../img/matrimonial.webp" alt="Colchón Ortopédico">
             <h3>Colchón Ortopédico</h3>
             <p class="precio-antiguo">S/ 999</p>
             <p class="precio">S/ 599</p>
@@ -43,7 +55,7 @@
         </div>
 
         <div class="card">
-            <img src="../pagina/estilos/images.jpeg" alt="Colchón Memory Foam">
+            <img src="../img/colchon-rose-ergo.webp" alt="Colchón Memory Foam">
             <h3>Colchón Memory Foam</h3>
             <p class="precio-antiguo">S/ 1,599</p>
             <p class="precio">S/ 999</p>
@@ -75,9 +87,12 @@
         <p class="total">Total: S/ <span id="total">0</span></p>
        
 
-<button onclick="vaciarCarrito()">
+<button onclick="vaciarCarrito()" class="boton">
+    
     Vaciar carrito
 </button>
+ <a href="../paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
+
     </div>
 
 
@@ -154,7 +169,7 @@ lista.innerHTML = "";
 carrito.forEach(producto => {
 
     
-    let subtotal = producto.precio * producto.cantidad;
+    let subtotal = producto.precio ;
 
     
     total += subtotal;
@@ -163,7 +178,7 @@ carrito.forEach(producto => {
         <li>
             <strong>${producto.nombre}</strong><br>
             Precio: S/ ${producto.precio}<br>
-            Cantidad: ${producto.cantidad}<br>
+           
             Subtotal: <strong>S/ ${subtotal}</strong>
         </li>
     `;

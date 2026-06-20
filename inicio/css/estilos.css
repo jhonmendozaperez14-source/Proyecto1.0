@@ -5,6 +5,45 @@
     box-sizing:border-box;
     font-family:Arial, sans-serif;
 }
+ .boton{
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: transparent;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    color: #0b2240;
+}
+
+.btn-ofertas {
+    background-color: #c98200;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.btn-ofertas:hover {
+    background-color: #a86d00;
+}
+
 .header{
     position:fixed;
     width:100%;
