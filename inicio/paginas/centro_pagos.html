@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de pagos</title>
     <link rel="stylesheet" href="../css/centro_pagos.css">
 </head>
-
 <body>
     <!-- BANNER -->
     <div class="banner">
         <img class="imagen1" src="../img/pngwing.com.png" alt="Carrito de compras">
-        <h1 class="h1">
-            Centro de pagos
-        </h1>
-         <h2 class="marca">SueñoPerfecto</h2>
-         <img class="imagen2" src="../img/cama-individual.png" alt="">
+        <h1 class="h1">Centro de pagos</h1>
+        <h2 class="marca">SueñoPerfecto</h2>
+        <img class="imagen2" src="../img/cama-individual.png" alt="">
     </div>
     <!-- METODOS DE PAGO -->
-    <h2 class="h2-pagos">
-        Metodos de pago aceptados
-    </h2>
+    <h2 class="h2-pagos">Metodos de pago aceptados</h2>
     <div class="pagos">
         <img src="../img/images.png" alt="">
         <img src="../img/63db0e7a5ff55.png" alt="">
@@ -33,7 +27,7 @@
         <br>
         <input type="text" name="Numero" placeholder="XXXX-XXXX-XXXX-XXXX">
         <br>
-        <Label for="Fecha de vencimiento">Fecha de vencimiento :</Label>
+        <label for="Fecha de vencimiento">Fecha de vencimiento :</label>
         <br>
         <input type="text" name="Fecha" placeholder="XX/XX">
     </div>
@@ -41,44 +35,67 @@
         <!-- DATOS DEL CLIENTE -->
         <label for="Nombre">Nombre del cliente</label>
         <br>
-       <input type="text" id="Nombre" placeholder="Nombres">
+        <input type="text" id="Nombre" placeholder="Nombres">
         <br>
         <label for="Correo">Correo Electronico</label>
         <br>
-       <input type="text" id="Correo" placeholder="@gmail.com">
+        <input type="text" id="Correo" placeholder="@gmail.com">
         <br>
         <label for="Direccion">Direccion</label>
         <br>
         <input type="text" id="Direccion" placeholder="">
     </div>
     <br>
+
+    <!-- agregado por jhon-->
+    <div class="tarjeta panel-resumen-jhon">
+        <h3>Tu Pedido en el Carrito:</h3>
+        <div id="resumen-caja"></div>
+        <!-- agregado por jhon: contenedor advertencia-->
+        <div id="error-mensaje-jhon" class="msg-error-jhon">⚠️ Por favor, agregue artículos a su carrito antes de confirmar el pago.</div>
+    </div>
+
     <div class="botones">
-    <button class="btn-confirmar" onclick="generarBoleta()">
-        Confirmar Pago
-    </button>
-
+        <button class="btn-confirmar" onclick="generarBoleta()">Confirmar Pago</button>
         <button class="btn-borrar" onclick="history.back()">Cancelar</button>
-</div>
-<script>
-function generarBoleta() {
+    </div>
 
-    localStorage.setItem(
-        "Nombre",
-        document.getElementById("Nombre").value
-    );
+    <!-- Script integrado-->
+    <script>
+        /* agregado por jhon */
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        const contenedor = document.getElementById("resumen-caja");
+        let total = 0;
+        let nombresProductos = [];
 
-    localStorage.setItem(
-        "Correo",
-        document.getElementById("Correo").value
-    );
+        if(carrito.length === 0) {
+            contenedor.innerHTML = "<p>El carrito está vacío</p>";
+        } else {
+            carrito.forEach(prod => {
+                total += prod.precio;
+                nombresProductos.push(prod.nombre);
+                contenedor.innerHTML += `<p class="item-resumen">• ${prod.nombre} - S/ ${prod.precio}</p>`;
+            });
+        }
 
-    localStorage.setItem(
-        "Direccion",
-        document.getElementById("Direccion").value
-    );
+        localStorage.setItem("Producto", nombresProductos.join(", "));
+        localStorage.setItem("Precio", "S/ " + total);
 
-    window.location.href = "boleta_de_pago.html";
-}
-</script>
-    </body>
-    </html>
+        function generarBoleta() {
+            /*validación*/
+            if(carrito.length === 0) {
+                const alertaVisual = document.getElementById("error-mensaje-jhon");
+                alertaVisual.style.display = "block"; // Hace visible el texto rojo de error
+                return;
+            }
+            /* fin jhon */
+
+            localStorage.setItem("Nombre", document.getElementById("Nombre").value);
+            localStorage.setItem("Correo", document.getElementById("Correo").value);
+            localStorage.setItem("Direccion", document.getElementById("Direccion").value);
+
+            window.location.href = "boleta_de_pago.html";
+        }
+    </script>
+</body>
+</html>

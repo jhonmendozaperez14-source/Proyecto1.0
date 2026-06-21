@@ -34,45 +34,45 @@
                 <img src="../img/colchon emma elite.webp" alt="Emma Elite">
                 <h3>Emma Elite</h3>
                 <p>Híbrido alta gama con tecnología AirGrid para una mejor distribución del peso y confort.</p>
-                <span class="precio-tarjeta">Desde S/ 1,500</span>
+                <span class="precio-tarjeta">Desde S/ 2,599.00</span>
                 <a href="3-detalles.html?id=emma" class="btn-comprar">Ver detalles</a>
-                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
+                <button onclick="agregar('Emma Elite', 2599)" class="btn-agregar-carro">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
                 <img src="../img/ColchonPremiun.avif" alt="Línea Premium">
                 <h3>Línea Premium</h3>
                 <p>Máximo confort con tecnología avanzada para un descanso profundo.</p>
-                <span class="precio-tarjeta">Desde S/ 1,200</span>
+                <span class="precio-tarjeta">Desde S/ 1,200.00</span>
                 <a href="3-detalles.html?id=premium" class="btn-comprar">Ver detalles</a>
-                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
+                <button onclick="agregar('Línea Premium', 1200)" class="btn-agregar-carro">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
                 <img src="../img/matrimonial.webp" alt="Línea Matrimonial">
                 <h3>Línea Matrimonial</h3>
                 <p>El espacio perfecto para compartir un descanso reparador en pareja.</p>
-                <span class="precio-tarjeta">Desde S/ 1,000</span>
+                <span class="precio-tarjeta">Desde S/ 1,000.00</span>
                 <a href="3-detalles.html?id=matrimonial" class="btn-comprar">Ver detalles</a>
-                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
+                <button onclick="agregar('Línea Matrimonial', 1000)" class="btn-agregar-carro">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
                 <img src="../img/colchones-visco.webp" alt="Espuma Viscoelástica"> 
                 <h3>Espuma Viscoelástica</h3>
                 <p>Se adapta perfectamente a la forma de tu cuerpo reduciendo los puntos de presión.</p>
-                <span class="precio-tarjeta">Desde S/ 950</span>
+                <span class="precio-tarjeta">Desde S/ 950.00</span>
                 <a href="3-detalles.html?id=viscoelastica" class="btn-comprar">Ver detalles</a>
-                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
+                <button onclick="agregar('Espuma Viscoelástica', 950)" class="btn-agregar-carro">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
                 <img src="../img/colchones-muelles.webp" alt="Muelles Ensacados">
                 <h3>Muelles Ensacados</h3>
                 <p>Mayor firmeza, soporte tradicional dinámico y excelente ventilación estructural.</p>
-                <span class="precio-tarjeta">Desde S/ 750</span>
+                <span class="precio-tarjeta">Desde S/ 750.00</span>
                 <a href="3-detalles.html?id=muelles" class="btn-comprar">Ver detalles</a>
-                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
+                <button onclick="agregar('Muelles Ensacados', 750)" class="btn-agregar-carro">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
@@ -81,7 +81,7 @@
                 <p>Sistema de resortes Pocket para independencia de movimiento y espuma Zebra de alta densidad.</p>
                 <span class="precio-tarjeta">S/ 1,899.00</span>
                 <a href="3-detalles.html?id=paraiso" class="btn-comprar">Ver detalles</a>
-                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
+                <button onclick="agregar('Paraíso Su Majestad', 1899)" class="btn-agregar-carro">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
@@ -90,109 +90,21 @@
                 <p>Parrilla de resortes Bonnell templados con cubierta de tela tejido de punto muy suave.</p>
                 <span class="precio-tarjeta">S/ 1,459.00</span>
                 <a href="3-detalles.html?id=rosen" class="btn-comprar">Ver detalles</a>
-                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
+                <button onclick="agregar('Rosen Ergo T', 1459)" class="btn-agregar-carro">Agregar al carrito</button>
             </div>
         </div>
     </main>
-     <div class="carrito">
+
+    <div class="seccion-carrito-jhon">
         <h2>🛒 Carrito de Compras</h2>
         <ul id="lista-carrito"></ul>
-        <p class="total">Total: S/ <span id="total">0</span></p>
-       
-
-<button onclick="vaciarCarrito()" class="boton">
-    
-    Vaciar carrito
-</button>
- <a href="../paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
-
+        <p class="total-carrito">Total: S/ <span id="total">0</span></p>
+        <div class="acciones-carrito">
+            <button onclick="vaciarCarrito()" class="btn-vaciar">Vaciar carrito</button>
+            <a href="centro_pagos.html" class="btn-ir-pagar">COMPRAR AHORA</a>
+        </div>
     </div>
 
+    <script src="../js/carrito-modelos.js"></script>
 </body>
 </html>
- <script>
-function cargarCarrito() {
-    const lista = document.getElementById("lista-carrito");
-    const totalElemento = document.getElementById("total");
-
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    let total = 0;
-
-    lista.innerHTML = "";
-
-    carrito.forEach((producto, indice) => {
-        const item = document.createElement("li");
-
-        item.innerHTML = `
-            ${producto.nombre} - S/ ${producto.precio}
-            <button onclick="eliminarProducto(${indice})">
-                Eliminar
-            </button>
-        `;
-
-        lista.appendChild(item);
-        total += producto.precio;
-    });
-
-    totalElemento.textContent = total;
-}
-
-function agregar(nombre, precio) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    carrito.push({
-        nombre: nombre,
-        precio: precio
-    });
-
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    cargarCarrito();
-}
-function eliminarProducto(indice) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    
-    carrito.splice(indice, 1);
-
-    
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    
-    cargarCarrito();
-}
-function vaciarCarrito() {
-    localStorage.removeItem("carrito");
-    cargarCarrito();
-}
-
-cargarCarrito();
-const lista = document.getElementById("lista-carrito");
-const totalElemento = document.getElementById("total");
-
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-let total = 0;
-
-lista.innerHTML = "";
-
-carrito.forEach(producto => {
-
-    
-    let subtotal = producto.precio ;
-
-    
-    total += subtotal;
-
-    lista.innerHTML += `
-        <li>
-            <strong>${producto.nombre}</strong><br>
-            Precio: S/ ${producto.precio}<br>
-           
-            Subtotal: <strong>S/ ${subtotal}</strong>
-        </li>
-    `;
-});
-
-
-totalElemento.textContent = total;
-</script>
