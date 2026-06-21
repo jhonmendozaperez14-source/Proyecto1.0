@@ -86,3 +86,25 @@ if (idProducto && baseDeDatos[idProducto]) {
 } else {
     window.location.href = "modelos.html";
 }
+// CÓDIGO PARA RESPETAR EL ORIGEN DEL CLIENTE (Inicio o Catálogo)
+const btnVolver = document.getElementById('btn-volver-dinamico');
+
+if (btnVolver) {
+    // document.referrer sabe la dirección exacta de la página anterior
+    if (document.referrer.includes("1-inicio.html") || document.referrer.includes("inicio.html")) {
+        btnVolver.textContent = "← Volver al Inicio";
+    } else {
+        btnVolver.textContent = "← Volver al catálogo";
+    }
+
+    // Al hacer clic, regresa en el historial del navegador
+    btnVolver.addEventListener('click', function(e) {
+        e.preventDefault(); // Evita que la página salte arriba por el href="#"
+        
+        if (document.referrer) {
+            window.history.back(); // Lo regresa a donde estaba (Inicio o Modelos)
+        } else {
+            window.location.href = "2-modelos.html"; // Por si entra directo sin historial, va a modelos
+        }
+    });
+}
