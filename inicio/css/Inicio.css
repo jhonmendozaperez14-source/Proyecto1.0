@@ -24,17 +24,6 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-.enlaces-navegacion a {
-    margin: 0 22px;
-    font-weight: 500;
-    color: #4a5568;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.enlaces-navegacion a:hover, .enlaces-navegacion a.active {
-    color: #000000;
-}
 
 /*Bienvenida*/
 .bienvenida {
@@ -109,7 +98,7 @@ body {
     border-radius: 14px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
-    max-width: 340px;
+    max-width: 28%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -345,9 +334,17 @@ body {
     min-width: 220px;
 }
 
-.columna-footer h3 { font-size: 19px; margin-bottom: 12px; } /* Convertido a px */
-.columna-footer h4 { font-size: 16px; margin-bottom: 12px; } /* Convertido a px */
-.columna-footer p, .columna-footer a { color: #94a3b8; font-size: 14px; margin-bottom: 8px; text-decoration: none; } /* Convertido a px */
+.columna-footer h3 { 
+    font-size: 19px; 
+    margin-bottom: 12px; } 
+.columna-footer h4 { 
+    font-size: 16px; 
+    margin-bottom: 12px; } 
+.columna-footer p, .columna-footer a { 
+    color: #94a3b8; 
+    font-size: 14px; 
+    margin-bottom: 8px; 
+    text-decoration: none; }
 .columna-footer a:hover { color: #ffffff; }
 
 .barra-copyright {
@@ -355,6 +352,6 @@ body {
     margin-top: 30px;
     padding-top: 15px;
     border-top: 1px solid #1e293b;
-    font-size: 13px; /* Tamaño ideal de copyright */
+    font-size: 13px;
     color: #64748b;
 }
