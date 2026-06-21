@@ -125,6 +125,8 @@ function cargarCarrito() {
     });
 
     totalElemento.textContent = total;
+    let nombres = carrito.map(producto => producto.nombre);
+    
 }
 
 function agregar(nombre, precio) {
@@ -185,6 +187,10 @@ carrito.forEach(producto => {
 
 
 totalElemento.textContent = total;
+let nombres = carrito.map(producto => producto.nombre);
+
+localStorage.setItem("Producto", nombres.join(", "));
+localStorage.setItem("Precio", "S/ " + total);
 </script>
 </body>
 </html>
