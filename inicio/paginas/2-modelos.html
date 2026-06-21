@@ -36,6 +36,7 @@
                 <p>Híbrido alta gama con tecnología AirGrid para una mejor distribución del peso y confort.</p>
                 <span class="precio-tarjeta">Desde S/ 1,500</span>
                 <a href="3-detalles.html?id=emma" class="btn-comprar">Ver detalles</a>
+                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
@@ -44,6 +45,7 @@
                 <p>Máximo confort con tecnología avanzada para un descanso profundo.</p>
                 <span class="precio-tarjeta">Desde S/ 1,200</span>
                 <a href="3-detalles.html?id=premium" class="btn-comprar">Ver detalles</a>
+                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
@@ -52,6 +54,7 @@
                 <p>El espacio perfecto para compartir un descanso reparador en pareja.</p>
                 <span class="precio-tarjeta">Desde S/ 1,000</span>
                 <a href="3-detalles.html?id=matrimonial" class="btn-comprar">Ver detalles</a>
+                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
@@ -60,6 +63,7 @@
                 <p>Se adapta perfectamente a la forma de tu cuerpo reduciendo los puntos de presión.</p>
                 <span class="precio-tarjeta">Desde S/ 950</span>
                 <a href="3-detalles.html?id=viscoelastica" class="btn-comprar">Ver detalles</a>
+                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
@@ -68,6 +72,7 @@
                 <p>Mayor firmeza, soporte tradicional dinámico y excelente ventilación estructural.</p>
                 <span class="precio-tarjeta">Desde S/ 750</span>
                 <a href="3-detalles.html?id=muelles" class="btn-comprar">Ver detalles</a>
+                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
@@ -76,6 +81,7 @@
                 <p>Sistema de resortes Pocket para independencia de movimiento y espuma Zebra de alta densidad.</p>
                 <span class="precio-tarjeta">S/ 1,899.00</span>
                 <a href="3-detalles.html?id=paraiso" class="btn-comprar">Ver detalles</a>
+                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
             </div>
 
             <div class="tarjeta-producto">
@@ -84,9 +90,109 @@
                 <p>Parrilla de resortes Bonnell templados con cubierta de tela tejido de punto muy suave.</p>
                 <span class="precio-tarjeta">S/ 1,459.00</span>
                 <a href="3-detalles.html?id=rosen" class="btn-comprar">Ver detalles</a>
+                  <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
             </div>
         </div>
     </main>
+     <div class="carrito">
+        <h2>🛒 Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p class="total">Total: S/ <span id="total">0</span></p>
+       
+
+<button onclick="vaciarCarrito()" class="boton">
+    
+    Vaciar carrito
+</button>
+ <a href="../paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
+
+    </div>
 
 </body>
 </html>
+ <script>
+function cargarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    const totalElemento = document.getElementById("total");
+
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let total = 0;
+
+    lista.innerHTML = "";
+
+    carrito.forEach((producto, indice) => {
+        const item = document.createElement("li");
+
+        item.innerHTML = `
+            ${producto.nombre} - S/ ${producto.precio}
+            <button onclick="eliminarProducto(${indice})">
+                Eliminar
+            </button>
+        `;
+
+        lista.appendChild(item);
+        total += producto.precio;
+    });
+
+    totalElemento.textContent = total;
+}
+
+function agregar(nombre, precio) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    carrito.push({
+        nombre: nombre,
+        precio: precio
+    });
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    cargarCarrito();
+}
+function eliminarProducto(indice) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    
+    carrito.splice(indice, 1);
+
+    
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    
+    cargarCarrito();
+}
+function vaciarCarrito() {
+    localStorage.removeItem("carrito");
+    cargarCarrito();
+}
+
+cargarCarrito();
+const lista = document.getElementById("lista-carrito");
+const totalElemento = document.getElementById("total");
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let total = 0;
+
+lista.innerHTML = "";
+
+carrito.forEach(producto => {
+
+    
+    let subtotal = producto.precio ;
+
+    
+    total += subtotal;
+
+    lista.innerHTML += `
+        <li>
+            <strong>${producto.nombre}</strong><br>
+            Precio: S/ ${producto.precio}<br>
+           
+            Subtotal: <strong>S/ ${subtotal}</strong>
+        </li>
+    `;
+});
+
+
+totalElemento.textContent = total;
+</script>

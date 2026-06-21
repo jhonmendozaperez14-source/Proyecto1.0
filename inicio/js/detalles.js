@@ -8,6 +8,7 @@ const baseDeDatos = {
         imagen: "../img/colchon emma elite.webp",
         desc: "Híbrido de alta gama con tecnología AirGrid para una mejor distribución del peso y confort supremo. Se adapta ergonómicamente a cualquier tipo de cuerpo disminuyendo la transferencia de movimiento en la cama.",
         caract: ["Firmeza: Dinámica adaptable", "Material: Células abiertas AirGrid", "Garantía: 10 años de fábrica", "Altura total: 30 centímetros"]
+        
     },
     premium: {
         titulo: "Colchón Línea Premium",
