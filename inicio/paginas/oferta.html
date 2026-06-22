@@ -101,7 +101,6 @@
     </footer>
     
    <script>
-  
 function cargarCarrito() {
     const lista = document.getElementById("lista-carrito");
     const totalElemento = document.getElementById("total");
@@ -112,23 +111,45 @@ function cargarCarrito() {
     lista.innerHTML = "";
 
     carrito.forEach((producto, indice) => {
-        const item = document.createElement("li");
-
-        item.innerHTML = `
-            ${producto.nombre} - S/ ${producto.precio}
-            <button onclick="eliminarProducto(${indice})">
-                Eliminar
-            </button>
-        `;
-
-        lista.appendChild(item);
         total += producto.precio;
+
+        lista.innerHTML += `
+            <li>
+                <strong>${producto.nombre}</strong><br>
+                Precio: S/ ${producto.precio}<br>
+                Subtotal: <strong>S/ ${producto.precio}</strong><br>
+
+                <button onclick="eliminarProducto(${indice})">
+                    ❌ Eliminar
+                </button>
+            </li>
+            <br>
+        `;
     });
 
     totalElemento.textContent = total;
+
     let nombres = carrito.map(producto => producto.nombre);
-    
+    localStorage.setItem("Producto", nombres.join(", "));
+    localStorage.setItem("Precio", "S/ " + total);
 }
+
+function eliminarProducto(indice) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    carrito.splice(indice, 1);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    cargarCarrito();
+}
+
+function vaciarCarrito() {
+    localStorage.removeItem("carrito");
+    cargarCarrito();
+}
+
+cargarCarrito();
 
 function agregar(nombre, precio) {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -159,35 +180,7 @@ function vaciarCarrito() {
     cargarCarrito();
 }
 
-cargarCarrito();
-const lista = document.getElementById("lista-carrito");
-const totalElemento = document.getElementById("total");
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-let total = 0;
-
-lista.innerHTML = "";
-
-carrito.forEach(producto => {
-
-    
-    let subtotal = producto.precio ;
-
-    
-    total += subtotal;
-
-    lista.innerHTML += `
-        <li>
-            <strong>${producto.nombre}</strong><br>
-            Precio: S/ ${producto.precio}<br>
-           
-            Subtotal: <strong>S/ ${subtotal}</strong>
-        </li>
-    `;
-});
-
-
-totalElemento.textContent = total;
 let nombres = carrito.map(producto => producto.nombre);
 
 localStorage.setItem("Producto", nombres.join(", "));
