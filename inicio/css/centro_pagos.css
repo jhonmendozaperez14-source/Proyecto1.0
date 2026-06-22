@@ -79,14 +79,14 @@ body{
     margin-bottom: 10px;
 
     font-size: 14px;
-     box-shadow: 0 0 8px rgba(102,126,234,0.4);
+    box-shadow: 0 0 8px rgba(102,126,234,0.4);
 }
 .Datos-cliente{
     margin-left: 30px;
     display: block;
 }
 .Datos-cliente input{
-  width: 300px;
+    width: 300px;
     height: 40px;
     padding-left: 10px;
 
@@ -109,4 +109,16 @@ body{
 
     font-size: 16px;
     cursor: pointer;
+}
+ /* agregado por jhon: estilo para el mensaje de error*/
+.msg-error-jhon {
+    color: #d32f2f;
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    display: none;
 }

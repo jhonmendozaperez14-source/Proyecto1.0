@@ -66,3 +66,135 @@ a {
         text-align: center;
     }
 }
+/* Botón azul para añadir al carrito en el catálogo */
+.btn-agregar-carro {
+    margin-top: 10px; 
+    background-color: #0066df; 
+    color: white;
+    border: none; 
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.btn-agregar-carro:hover {
+    background-color: #004da6;
+}
+
+/* Contenedor del carrito inferior */
+.seccion-carrito-jhon {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    font-family: Arial, sans-serif;
+}
+
+.seccion-carrito-jhon h2 {
+    color: #0b2240;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.seccion-carrito-jhon ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Filas de productos añadidos */
+.item-lista-carrito {
+    padding: 12px 10px;
+    border-bottom: 1px solid #edf2f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-lista-carrito strong {
+    color: #333;
+}
+
+/* Botón eliminar individual */
+.btn-eliminar-item {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-eliminar-item:hover {
+    background-color: #cc0000;
+}
+
+/* Total del precio */
+.total-carrito {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin: 20px 0;
+    color: #0066df;
+}
+
+/* Caja de acciones (Vaciar e Ir a Pagar) */
+.acciones-carrito {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-vaciar {
+    width: 48%;
+    background-color: #e2e8f0;
+    color: #4a5568;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-vaciar:hover {
+    background-color: #cbd5e0;
+}
+
+.btn-ir-pagar {
+    width: 48%;
+    background-color: #0066df;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.btn-ir-pagar:hover {
+    background-color: #004da6;
+}
+
+/* Estilos para el resumen*/
+.panel-resumen-caja-jhon {
+    background: rgba(255,255,255,0.85);
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+    margin-bottom: 20px;
+    border: 1px dashed #764ba2;
+}
+
+.item-resumen {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #444;
+}

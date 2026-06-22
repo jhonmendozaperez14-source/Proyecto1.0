@@ -15,24 +15,18 @@
     <p><strong>Correo:</strong> <span id="correo"></span></p>
     <p><strong>Dirección:</strong> <span id="direccion"></span></p>
     <p><strong>Producto:</strong> <span id="producto"></span></p>
-<p><strong>Total Pagado:</strong> <span id="precio"></span></p>
-   <script>
-document.getElementById("nombre").textContent =
-localStorage.getItem("Nombre");
+    <p><strong>Total Pagado:</strong> <span id="precio"></span></p>
 
-document.getElementById("correo").textContent =
-localStorage.getItem("Correo");
+    <script>
+        document.getElementById("nombre").textContent = localStorage.getItem("Nombre");
+        document.getElementById("correo").textContent = localStorage.getItem("Correo");
+        document.getElementById("direccion").textContent = localStorage.getItem("Direccion");
+        document.getElementById("producto").textContent = localStorage.getItem("Producto");
+        document.getElementById("precio").textContent = localStorage.getItem("Precio");
 
-document.getElementById("direccion").textContent =
-localStorage.getItem("Direccion");
-
-document.getElementById("producto").textContent =
-localStorage.getItem("Producto");
-
-document.getElementById("precio").textContent =
-localStorage.getItem("Precio");
-
-</script>
+        /* agregado por jhon */
+        localStorage.removeItem("carrito");
+    </script>
 <hr>
 
 <h2>¡Gracias por su compra!</h2>
@@ -43,7 +37,7 @@ Esperamos que disfrute de un descanso cómodo y reparador.
 </p>
 </div>
 <div class="boton">
-    <a href="2-modelos.html">
+    <a href="2-modelos.html" style="text-decoration: none; color: white;">
         <button class="btn-regresar">Regresar a los modelos</button>
     </a>
 </div>
