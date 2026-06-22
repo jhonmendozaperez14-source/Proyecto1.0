@@ -19,12 +19,31 @@ function agregarAlCarrito() {
 
     alert("Producto agregado al carrito.");
 
-    // Opcional: regresar automáticamente a la página de ofertas
-    // window.location.href = "oferta.html";
+   
 }
 </script>
 <body>
-    
+      <header class="navbar"> 
+        <div class="logo">
+            <span class="icon">🛏️</span>
+            <strong>SueñoPerfecto</strong>
+        </div>
+        <nav class="enlaces-navegacion">
+            <a href="1-inicio.html">Inicio</a>
+            <a href="2-modelos.html">Modelos</a>
+            <a href="mejoras_sueno_perfecto.html">Contacto</a>
+        </nav>
+        <div class="nav-button" style="display: flex; align-items: center; gap: 15px;">
+            <a href="oferta.html" class="btn-ofertas">Ofertas 🔥</a>
+            
+            <div class="contenedor-carrito-nav">
+                <a href="carrito.html" class="btn-carrito-nav" title="Ver Mi Carrito" style="position: relative; text-decoration: none;">
+                    🛒
+                    <span id="contador-carrito-nav" class="burbuja-contador" style="background: #ff4d4d; color: white; border-radius: 50%; padding: 2px 7px; font-size: 12px; margin-left: 5px; display: none;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
     <header>
         <h1>Colchón Ortopédico
  Comfort</h1>
@@ -68,7 +87,7 @@ function agregarAlCarrito() {
 
     <footer>
         <p>© 2026 Colchones Sueño Perfecto - Todos los derechos reservados</p>
-        <a href="../paginas/oferta.html">VOLVER</a>
+        <a href="../paginas/oferta.html"class="btn-ofertas">VOLVER</a>
        
     </footer>
 

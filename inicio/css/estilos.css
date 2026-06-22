@@ -5,15 +5,7 @@
     box-sizing:border-box;
     font-family:Arial, sans-serif;
 }
- .boton{
-            display: inline-block;
-            background-color: #28a745;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
+
 
 .navbar {
     display: flex;
@@ -159,7 +151,7 @@ section div {
     margin: auto;
     
 }
-/*barra de navegacion*/
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -169,9 +161,10 @@ section div {
 .enlaces-navegacion a {
     color: #6b09e4;
     margin: 0 15px;
-    font-weight: 600;
+    font-weight: 500;
     transition: color 0.3s;
     text-decoration: none;
+   
 }
 
 .enlaces-navegacion a.active, .enlaces-navegacion a:hover {
