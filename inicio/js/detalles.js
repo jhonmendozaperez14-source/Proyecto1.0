@@ -55,7 +55,44 @@ const baseDeDatos = {
         imagen: "../img/colchones-muelles.webp",
         desc: "Mayor firmeza, soporte tradicional dinámico y excelente ventilación estructural. El núcleo pocket spring permite el flujo continuo de aire manteniendo el colchón siempre fresco.",
         caract: ["Firmeza: Alta tradicional", "Material: Resortes independientes encapsulados", "Garantía: 5 años de cobertura", "Altura total: 28 centímetros"]
-    }
+    },
+    ColchónPremiumComfort:{
+        titulo: "Colchón Premium Comfort",
+        precioNum: 799,
+        imagen: "../img/ColchonPremiun.avif",
+
+
+    },
+     ColchónOrtopedico:{
+        titulo: "Colchón Ortopédico",
+        precioNum: 599,
+        imagen: "../img/matrimonial.webp",
+
+
+    },
+     ColchónMemoryFoam:{
+        titulo: "Colchón Memory Foam",
+        precioNum: 950,
+        imagen: "../img/colchones-visco.webp",
+
+
+    },
+     Colchónmuelles:{
+        titulo: "Colchón Muelles",
+        precioNum: 999,
+        imagen: "../img/colchones-muelles.webp",
+
+
+    },
+     colchonemmaelite:{
+        titulo: "Colchón Emma Elite",
+        precioNum: 1999,
+        imagen: "../img/colchon emma elite.webp",
+
+
+    },
+
+
 };
 
 
