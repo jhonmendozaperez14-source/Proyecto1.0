@@ -130,8 +130,13 @@
             localStorage.setItem("Correo", document.getElementById("Correo").value);
             localStorage.setItem("Direccion", document.getElementById("Direccion").value);
 
-    window.location.href = "boleta_de_pago.html";
-}
-</script>
-    </body>
-    </html>
+            window.location.href = "boleta_de_pago.html";
+        }
+
+        /*Renderizar inmediatamente al cargar el documento*/
+        document.addEventListener("DOMContentLoaded", () => {
+            cargarCarritoPasarela();
+        });
+    </script>
+</body>
+</html>
