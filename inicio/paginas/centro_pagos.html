@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de pagos</title>
+    <title>Centro de Pagos | Sueño Perfecto</title>
     <link rel="stylesheet" href="../css/centro_pagos.css">
 </head>
 <body>
@@ -12,90 +12,139 @@
         <img class="imagen1" src="../img/pngwing.com.png" alt="Carrito de compras">
         <h1 class="h1">Centro de pagos</h1>
         <h2 class="marca">SueñoPerfecto</h2>
-        <img class="imagen2" src="../img/cama-individual.png" alt="">
+        <img class="imagen2" src="../img/cama-individual.png" alt="Cama">
     </div>
+
     <!-- METODOS DE PAGO -->
-    <h2 class="h2-pagos">Metodos de pago aceptados</h2>
+    <h2 class="h2-pagos">Métodos de pago aceptados</h2>
     <div class="pagos">
-        <img src="../img/images.png" alt="">
-        <img src="../img/63db0e7a5ff55.png" alt="">
-        <img src="../img/download.png" alt="">
+        <img src="../img/images.png" alt="Visa">
+        <img src="../img/63db0e7a5ff55.png" alt="Mastercard">
+        <img src="../img/download.png" alt="Yape/Plin">
     </div>
+
     <!-- DATOS DE TARJETA -->
     <div class="tarjeta">
-        <label for="Numero de tarjeta">Numero de tarjeta :</label>
-        <br>
-        <input type="text" name="Numero" placeholder="XXXX-XXXX-XXXX-XXXX">
-        <br>
-        <label for="Fecha de vencimiento">Fecha de vencimiento :</label>
-        <br>
-        <input type="text" name="Fecha" placeholder="XX/XX">
+        <label for="Numero">Número de tarjeta :</label>
+        <input type="text" id="Numero" name="Numero" placeholder="XXXX-XXXX-XXXX-XXXX">
+        
+        <label for="Fecha">Fecha de vencimiento :</label>
+        <input type="text" id="Fecha" name="Fecha" placeholder="XX/XX">
     </div>
-    <div class="Datos-cliente">
-        <!-- DATOS DEL CLIENTE -->
-        <label for="Nombre">Nombre del cliente</label>
-        <br>
-        <input type="text" id="Nombre" placeholder="Nombres">
-        <br>
-        <label for="Correo">Correo Electronico</label>
-        <br>
-        <input type="text" id="Correo" placeholder="@gmail.com">
-        <br>
-        <label for="Direccion">Direccion</label>
-        <br>
-        <input type="text" id="Direccion" placeholder="">
-    </div>
-    <br>
 
-    <!-- agregado por jhon-->
-    <div class="tarjeta panel-resumen-jhon">
+    <!-- DATOS DEL CLIENTE -->
+    <div class="Datos-cliente">
+        <label for="Nombre">Nombre del cliente</label>
+        <input type="text" id="Nombre" placeholder="Nombres completos">
+        
+        <label for="Correo">Correo Electrónico</label>
+        <input type="text" id="Correo" placeholder="ejemplo@gmail.com">
+        
+        <label for="Direccion">Dirección de entrega</label>
+        <input type="text" id="Direccion" placeholder="Av. Universitaria...">
+    </div>
+    <!--agregado por jhon: Contenedor del Carrito -->
+    <div class="panel-resumen-jhon">  
         <h3>Tu Pedido en el Carrito:</h3>
         <div id="resumen-caja"></div>
-        <!-- agregado por jhon: contenedor advertencia-->
-        <div id="error-mensaje-jhon" class="msg-error-jhon">⚠️ Por favor, agregue artículos a su carrito antes de confirmar el pago.</div>
+        
+        <div id="error-mensaje-jhon" class="msg-error-jhon">⚠️ Por favor, agregue artículos a su carrito antes de confirmar el pago.</div>        
     </div>
 
-    <div class="botones">
+    <div class="botones">  
         <button class="btn-confirmar" onclick="generarBoleta()">Confirmar Pago</button>
         <button class="btn-borrar" onclick="history.back()">Cancelar</button>
     </div>
 
-    <!-- Script integrado-->
+    <script src="../js/carrito-global.js"></script>
     <script>
+            /*CARRITO INTEGRADA*/
         /* agregado por jhon */
-        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-        const contenedor = document.getElementById("resumen-caja");
-        let total = 0;
-        let nombresProductos = [];
+        function cargarCarritoPasarela() {
+            const contenedor = document.getElementById("resumen-caja");
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            let total = 0;
+            let nombresProductos = [];
 
-        if(carrito.length === 0) {
-            contenedor.innerHTML = "<p>El carrito está vacío</p>";
-        } else {
-            carrito.forEach(prod => {
-                total += prod.precio;
-                nombresProductos.push(prod.nombre);
-                contenedor.innerHTML += `<p class="item-resumen">• ${prod.nombre} - S/ ${prod.precio}</p>`;
-            });
-        }
-
-        localStorage.setItem("Producto", nombresProductos.join(", "));
-        localStorage.setItem("Precio", "S/ " + total);
-
-        function generarBoleta() {
-            /*validación*/
             if(carrito.length === 0) {
-                const alertaVisual = document.getElementById("error-mensaje-jhon");
-                alertaVisual.style.display = "block"; // Hace visible el texto rojo de error
+                contenedor.innerHTML = "<p style='color: #777;'>El carrito está vacío.</p>";
+                localStorage.setItem("Producto", "");
+                localStorage.setItem("Precio", "S/ 0.00");
                 return;
             }
-            /* fin jhon */
+
+            contenedor.innerHTML = ""; /*Limpiar contenido previo*/
+
+            carrito.forEach((prod, indice) => {
+                total += prod.precio;
+                nombresProductos.push(prod.nombre);
+                
+                /*Renderizado con fila limpia y botón eliminar por cada elemento*/
+                contenedor.innerHTML += `
+                    <div class="item-resumen-fila">
+                        <div>
+                            <strong>• ${prod.nombre}</strong><br>
+                            <span style="color: #666; font-size: 0.9rem;">S/ ${prod.precio.toFixed(2)}</span>
+                        </div>
+                        <button onclick="eliminarProductoPasarela(${indice})" title="Eliminar del carrito">❌</button>
+                    </div>
+                `;
+            });
+
+            /*Mostrar Total formateado*/
+            contenedor.innerHTML += `
+                <div class="total-pago-caja">
+                    Total a Pagar: S/ ${total.toFixed(2)}
+                </div>
+            `;
+
+            /*Respaldos requeridos en LocalStorage para tu boleta final*/
+            localStorage.setItem("Producto", nombresProductos.join(", "));
+            localStorage.setItem("Precio", "S/ " + total.toFixed(2));
+        }
+
+        /* agregado por jhon */
+        function eliminarProductoPasarela(indice) {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            carrito.splice(indice, 1);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            
+            // Actualiza tanto la visualización de la pasarela como la burbuja del header si existiera
+            if (typeof actualizarBurbujaHeader === "function") {
+                actualizarBurbujaHeader();
+            }
+            cargarCarritoPasarela();
+        }
+
+        function generarBoleta() {
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            
+            /* validación agregado por jhon */
+            if(carrito.length === 0) {
+                const alertaVisual = document.getElementById("error-mensaje-jhon");
+                alertaVisual.style.display = "block";
+                return;
+            }
 
             localStorage.setItem("Nombre", document.getElementById("Nombre").value);
             localStorage.setItem("Correo", document.getElementById("Correo").value);
             localStorage.setItem("Direccion", document.getElementById("Direccion").value);
 
+<<<<<<< HEAD
     window.location.href = "boleta_de_pago.html";
 }
 </script>
     </body>
     </html>
+=======
+            window.location.href = "boleta_de_pago.html";
+        }
+
+        /*Renderizar inmediatamente al cargar el documento*/
+        document.addEventListener("DOMContentLoaded", () => {
+            cargarCarritoPasarela();
+        });
+    </script>
+</body>
+</html>
+>>>>>>> a9d54b33b51527f38e7db00bbe2d058861e15b7f

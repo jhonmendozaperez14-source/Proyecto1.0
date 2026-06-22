@@ -8,19 +8,19 @@
 </head>
 <script>
 function agregarAlCarrito() {
-    
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    
     carrito.push({
         nombre: "Colchón Ortopédico",
         precio: 599
     });
 
-    
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
     alert("Producto agregado al carrito.");
+
+    // Opcional: regresar automáticamente a la página de ofertas
+    // window.location.href = "oferta.html";
 }
 </script>
 <body>
@@ -60,7 +60,7 @@ function agregarAlCarrito() {
                 <li>✔ Capacidad máxima: 300 kg</li>
             </ul>
 
-           <a href="../paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
+            <a href="../paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
             <button onclick="agregarAlCarrito()" class="boton">Agregar al Carrito</button>
         </div>
 

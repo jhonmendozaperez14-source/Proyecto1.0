@@ -1,124 +1,185 @@
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
+/* Banner Principal */
 .banner {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 120%);
-    padding: 30px 40px;
+    background: linear-gradient(135deg, #0056b3, #007bff);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.banner .h1 {
     margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
 }
-.marca{
-    color: white;
+
+.banner .marca {
     margin: 0;
-    font-size: 40px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
 }
 
-body{
-    background-image: url("../img/WhatsApp\ Image\ 2026-06-05\ at\ 5.42.31\ PM.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-.imagen1 {
-    width: 90px;
-    height: 90px;
-    margin-right: 20px;
-    flex-shrink: 0;
-}
-.imagen2{
-    width: 90px;
-    height: 90px;
-    margin-left: 70px;
-    flex-shrink: 9;
+.banner img {
+    height: 60px;
+    width: auto;
 }
 
-.h1 {
-    text-align: left;
-    font-size: 50px;
-    margin: 0;
-    font-weight: normal;
-    text-decoration: none;
-    color: white;
-    flex: 1;
-}
-.h2-pagos{
-    margin-left: 30px;
-    font-size:40px;
-}
-.metodo{
-    margin-left: 20px;
-    display: flex;
-}
-.pagos img {
-    width: 60px;
-    height: 40px;
-    
-    gap: 10px;
-    margin-right: -1%;
-    margin-left: 30px;
-    border:2px solid blue;
-    border-color: blue;
-}
-.tarjeta{
-    margin-left: 30px;
-}
-.tarjeta input{
-    width: 300px;
-    height: 40px;
-    padding-left: 10px;
-
-    border: 2px solid #667eea;
-    border-radius: 10px;
-
-    margin-top: 5px;
-    margin-bottom: 10px;
-
-    font-size: 14px;
-    box-shadow: 0 0 8px rgba(102,126,234,0.4);
-}
-.Datos-cliente{
-    margin-left: 30px;
-    display: block;
-}
-.Datos-cliente input{
-    width: 300px;
-    height: 40px;
-    padding-left: 10px;
-
-    border: 2px solid #667eea;
-    border-radius: 10px;
-
-    box-shadow: 0 0 8px rgba(102,126,234,0.4);
-}
-.botones button{
-    width: 200px;
-    height: 45px;
-
-    margin-left: 30px;
-
-    border: none;
-    border-radius: 10px;
-
-    background-color: #667eea;
-    color: white;
-
-    font-size: 16px;
-    cursor: pointer;
-}
- /* agregado por jhon: estilo para el mensaje de error*/
-.msg-error-jhon {
-    color: #d32f2f;
-    background-color: #ffebee;
-    border: 1px solid #ffcdd2;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 10px;
+/* Métodos de Pago */
+.h2-pagos {
     text-align: center;
+    margin-top: 30px;
+    color: #444;
+    font-size: 1.4rem;
+}
+
+.pagos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.pagos img {
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+}
+
+/* Estructura de Cajas (Formularios y Resumen) */
+.tarjeta, .Datos-cliente, .panel-resumen-jhon {
+    background: white;
+    max-width: 550px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #eef2f5;
+}
+
+label {
+    font-weight: 600;
+    color: #555;
+    display: inline-block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    outline: none;
+}
+
+/* agregado por jhon: Estilos del Carrito */
+.panel-resumen-jhon h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    color: #007bff;
+}
+
+.item-resumen-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.item-resumen-fila button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.item-resumen-fila button:hover {
+    background: #e03131;
+}
+
+.total-pago-caja {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    color: #2b6cb0;
+}
+
+/* Mensaje de Error */
+.msg-error-jhon {
     display: none;
+    background-color: #fff5f5;
+    color: #c53030;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #e53e3e;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Botonera Inferior */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    max-width: 550px;
+    margin: 30px auto 50px auto;
+}
+
+.btn-confirmar, .btn-borrar {
+    flex: 1;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.2s ease;
+}
+
+.btn-confirmar {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-confirmar:hover {
+    background-color: #218838;
+}
+
+.btn-borrar {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-borrar:hover {
+    background-color: #5a6268;
+}
+
+.btn-confirmar:active, .btn-borrar:active {
+    transform: scale(0.98);
 }

@@ -8,19 +8,19 @@
 </head>
 <script>
 function agregarAlCarrito() {
-    
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    
     carrito.push({
-        nombre: "Colchón muelles",
+        nombre: "Colchón Muelles",
         precio: 999
     });
 
-    
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
     alert("Producto agregado al carrito.");
+
+    // Opcional: regresar automáticamente a la página de ofertas
+    // window.location.href = "oferta.html";
 }
 </script>
 <body>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito | Sueño Perfecto</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/carrito-page.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="icon">🛏️</span>
+            <strong>SueñoPerfecto</strong>
+        </div>
+        <nav class="enlaces-navegacion">
+            <a href="1-inicio.html">Inicio</a>
+            <a href="2-modelos.html">Modelos</a>
+            <a href="oferta.html">Ofertas 🔥</a>
+        </nav>
+        <div class="nav-button">
+            <div class="contenedor-carrito-nav">
+                <a href="carrito.html" class="btn-carrito-nav-active">
+                    🛒 <span id="contador-carrito-nav" class="burbuja-contador">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL INSPIRADO EN LA MEJOR WEB XD TOTTUS -->
+    <main class="contenedor-carro-tottus">
+        
+        <!-- Columna Izquierda: Productos en el carro -->
+        <section class="seccion-items-carro">
+            <h2 class="titulo-carro">Carro (<span id="cantidad-productos-tit">0</span> productos)</h2>
+            
+            <div class="tarjeta-vendedor-envio">
+                <span class="check-verde">✓</span> Vendido por <strong>Sueño Perfecto</strong>
+            </div>
+
+            <!-- Aquí el js traera dinámicamente los productos -->
+            <div id="contenedor-items-lista-carro">
+            </div>
+        </section>
+
+        <!-- Columna Derecha: Resumen de la Orden fija osea lo q pides -->
+        <aside class="seccion-resumen-orden">
+        <div class="tarjeta-resumen-tottus">
+    <h3>Resumen de la orden</h3>
+    
+    <a href="centro_pagos.html" class="btn-continuar-compra-tottus">Continuar compra</a>
+    
+    <button id="btn-seguir-comprando" style="width: 100%; margin-top: 10px; padding: 10px; background: #f4f4f4; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; font-weight: bold;">
+        🛍️ Seguir comprando
+    </button>
+
+    <button onclick="vaciarCarritoCompleto()" class="btn-vaciar-carro-tottus" style="margin-top: 10px;">Vaciar Carrito</button>
+</div>
+        </aside>
+
+    </main>
+
+    <!-- SCRIPTS IMPORTANTES NO TOCAR -->
+    <script src="../js/detalles.js"></script>
+    <script src="../js/carrito-global.js"></script>
+</body>
+</html>

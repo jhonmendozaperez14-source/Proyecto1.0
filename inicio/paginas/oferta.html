@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sueño|Ofertas</title>
+    <title>Sueño | Ofertas</title>
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/global.css">
 </head>
 <body>
-    <div>
-       <header class="navbar">
+
+    <header class="navbar"> /*agregado por JHON = todo el header y el java del final*/
         <div class="logo">
             <span class="icon">🛏️</span>
             <strong>SueñoPerfecto</strong>
         </div>
         <nav class="enlaces-navegacion">
             <a href="1-inicio.html">Inicio</a>
-            <a href="2-modelos.html" class="active">Modelos</a>
-              <a href="../paginas/mejoras_sueno_perfecto.html">Contacto</a>
-        
-            
+            <a href="2-modelos.html">Modelos</a>
+            <a href="mejoras_sueno_perfecto.html">Contacto</a>
         </nav>
+        <div class="nav-button" style="display: flex; align-items: center; gap: 15px;">
+            <a href="oferta.html" class="btn-ofertas">Ofertas 🔥</a>
+            
+            <div class="contenedor-carrito-nav">
+                <a href="carrito.html" class="btn-carrito-nav" title="Ver Mi Carrito" style="position: relative; text-decoration: none;">
+                    🛒
+                    <span id="contador-carrito-nav" class="burbuja-contador" style="background: #ff4d4d; color: white; border-radius: 50%; padding: 2px 7px; font-size: 12px; margin-left: 5px; display: none;">0</span>
+                </a>
+            </div>
         </div>
-    </header>
-    
-    
-
-    <section class="banner">
-         <h1>🛏️ Mega Ofertas de Colchones</h1>
+    </header> <section class="banner">
+        <h1>🛏️ Mega Ofertas de Colchones</h1>
         <p>Descansa mejor al mejor precio</p>
-       
         <p>Promoción válida por tiempo limitado</p>
         <h1>Comprar Ahora!!!!</h1>
     </section>
@@ -40,9 +43,8 @@
             <h3>Colchón Premium</h3>
             <p class="precio-antiguo">S/ 1,299</p>
             <p class="precio">S/ 799</p>
-            <button> <a href="../paginas/primercolchon.html"target="_black">Ver Oferta</a></button>
-             <button onclick="agregar('Colchón Premium',799)">Agregar al carrito</button>
-            
+            <button><a href="../paginas/primercolchon.html">Ver Oferta</a></button>
+            <button onclick="agregar('Colchón Premium', 799)">Agregar al carrito</button>
         </div>
 
         <div class="card">
@@ -50,8 +52,8 @@
             <h3>Colchón Ortopédico</h3>
             <p class="precio-antiguo">S/ 999</p>
             <p class="precio">S/ 599</p>
-            <button><a href="../paginas/segundocolchon.html"target="_black">Ver Oferta</a></button>
-             <button onclick="agregar('Colchón Ortopédico',599)">Agregar al carrito</button>
+            <button><a href="../paginas/segundocolchon.html">Ver Oferta</a></button>
+            <button onclick="agregar('Colchón Ortopédico', 599)">Agregar al carrito</button>
         </div>
 
         <div class="card">
@@ -59,139 +61,34 @@
             <h3>Colchón Memory Foam</h3>
             <p class="precio-antiguo">S/ 1,599</p>
             <p class="precio">S/ 999</p>
-            <button><a href="../paginas/tercercolchon.html"target="_black">Ver Oferta</a></button>
-             <button onclick="agregar('Colchón Memory Foam',999)">Agregar al carrito</button>
+            <button><a href="../paginas/tercercolchon.html">Ver Oferta</a></button>
+            <button onclick="agregar('Colchón Memory Foam', 999)">Agregar al carrito</button>
         </div>
-         <div class="card">
-            <img src="../img/colchones-muelles.webp" alt="Colchón muelles ">
+
+        <div class="card">
+            <img src="../img/colchones-muelles.webp" alt="Colchón muelles">
             <h3>Colchón muelles Bonell</h3>
             <p class="precio-antiguo">S/ 1,699</p>
             <p class="precio">S/ 1,199</p>
-            <button><a href="../paginas/cuartocolchon.html"target="_black">Ver Oferta</a></button>
-             <button onclick="agregar('Colchón Muelles',1199)">Agregar al carrito</button>
+            <button><a href="../paginas/cuartocolchon.html">Ver Oferta</a></button>
+            <button onclick="agregar('Colchón Muelles', 1199)">Agregar al carrito</button>
         </div>
         
-         <div class="card">
+        <div class="card">
             <img src="../img/colchon emma elite.webp" alt="Colchón emma elite">
             <h3>Colchón Emma</h3>
             <p class="precio-antiguo">S/ 2,599</p>
             <p class="precio">S/ 1,999</p>
-            <button><a href="../paginas/quintocolchon.html"target="_black">Ver Oferta</a></button>
-             <button onclick="agregar('Colchón Emma elite',1999)">Agregar al carrito</button>
+            <button><a href="../paginas/quintocolchon.html">Ver Oferta</a></button>
+            <button onclick="agregar('Colchón Emma elite', 1999)">Agregar al carrito</button>
         </div>
 
     </section>
-    <div class="carrito">
-        <h2>🛒 Carrito de Compras</h2>
-        <ul id="lista-carrito"></ul>
-        <p class="total">Total: S/ <span id="total">0</span></p>
-       
-
-<button onclick="vaciarCarrito()" class="boton">
-    
-    Vaciar carrito
-</button>
- <a href="../paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
-
-    </div>
-
 
     <footer>
         <p>© 2026 Colchones Sueño Perfecto - Todos los derechos reservados.</p>
     </footer>
-    
-   <script>
-  
-function cargarCarrito() {
-    const lista = document.getElementById("lista-carrito");
-    const totalElemento = document.getElementById("total");
 
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    let total = 0;
-
-    lista.innerHTML = "";
-
-    carrito.forEach((producto, indice) => {
-        const item = document.createElement("li");
-
-        item.innerHTML = `
-            ${producto.nombre} - S/ ${producto.precio}
-            <button onclick="eliminarProducto(${indice})">
-                Eliminar
-            </button>
-        `;
-
-        lista.appendChild(item);
-        total += producto.precio;
-    });
-
-    totalElemento.textContent = total;
-    let nombres = carrito.map(producto => producto.nombre);
-    
-}
-
-function agregar(nombre, precio) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    carrito.push({
-        nombre: nombre,
-        precio: precio
-    });
-
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    cargarCarrito();
-}
-function eliminarProducto(indice) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    
-    carrito.splice(indice, 1);
-
-    
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    
-    cargarCarrito();
-}
-function vaciarCarrito() {
-    localStorage.removeItem("carrito");
-    cargarCarrito();
-}
-
-cargarCarrito();
-const lista = document.getElementById("lista-carrito");
-const totalElemento = document.getElementById("total");
-
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-let total = 0;
-
-lista.innerHTML = "";
-
-carrito.forEach(producto => {
-
-    
-    let subtotal = producto.precio ;
-
-    
-    total += subtotal;
-
-    lista.innerHTML += `
-        <li>
-            <strong>${producto.nombre}</strong><br>
-            Precio: S/ ${producto.precio}<br>
-           
-            Subtotal: <strong>S/ ${subtotal}</strong>
-        </li>
-    `;
-});
-
-
-totalElemento.textContent = total;
-let nombres = carrito.map(producto => producto.nombre);
-
-localStorage.setItem("Producto", nombres.join(", "));
-localStorage.setItem("Precio", "S/ " + total);
-</script>
+    <script src="../js/detalles.js"></script>
 </body>
 </html>
