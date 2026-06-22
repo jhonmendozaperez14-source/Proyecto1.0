@@ -1,28 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colchón Premium Comfort | Sueño Perfecto</title>
     <link rel="stylesheet" href="../css/estilocolchon1.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/global.css">
 </head>
-<script>
-function agregarAlCarrito() {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    carrito.push({
-        nombre: "Colchón Premium Comfort",
-        precio: 799
-    });
-
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    alert("Producto agregado al carrito.");
-
-    // Opcional: regresar automáticamente a la página de ofertas
-    // window.location.href = "oferta.html";
-}
-</script>
 <body>
     
     <header>
@@ -30,7 +14,7 @@ function agregarAlCarrito() {
         <p>Descanso de calidad para toda la familia</p>
     </header>
 
-    <div class="contenedor">
+    <main class="contenedor">
 
         <div class="imagen">
             <img src="../img/ColchonPremiun.avif" alt="Colchón Premium">
@@ -42,8 +26,7 @@ function agregarAlCarrito() {
                 El Colchón Premium Comfort está diseñado para brindar el máximo confort y soporte durante toda la noche.
             </p>
 
-            
-             <p class="precio-antiguo">S/ 1,299</p>
+            <p class="precio-antiguo">S/ 1,299</p>
             <p class="precio">S/ 799</p>
 
             <h3>Especificaciones</h3>
@@ -59,23 +42,16 @@ function agregarAlCarrito() {
            
             <a href="../paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
 
-            <button onclick="agregarAlCarrito()" class="boton">
-    Agregar al carrito
-
-</div>
-               
-             </button>
-        </div>
-
-    </div>
-     
+            <button onclick="agregar('Colchón Línea Premium', 799)" class="boton">
+                Agregar al carrito
+            </button>
+        </div> </main>
 
     <footer>
         <p>© 2026 Colchones Sueño Perfecto - Todos los derechos reservados</p>
         <a href="../paginas/oferta.html">VOLVER</a>
     </footer>
     
-
-
+    <script src="../js/detalles.js"></script>
 </body>
 </html>

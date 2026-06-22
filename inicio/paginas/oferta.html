@@ -9,27 +9,28 @@
 </head>
 <body>
 
-    <header class="navbar"> /*agregado por JHON = todo el header y el java del final*/
-        <div class="logo">
-            <span class="icon">🛏️</span>
-            <strong>SueñoPerfecto</strong>
+    <header class="navbar">
+    <div class="logo">
+        <span class="icon">🛏️</span>
+        <strong>SueñoPerfecto</strong>
+    </div>
+    <nav class="enlaces-navegacion">
+        <a href="1-inicio.html">Inicio</a>
+        <a href="2-modelos.html">Modelos</a>
+        <a href="mejoras_sueno_perfecto.html">Contacto</a>
+    </nav>
+    <div class="nav-button" style="display: flex; align-items: center; gap: 15px;">
+        <a href="oferta.html" class="btn-ofertas">Ofertas 🔥</a>
+        
+        <div class="contenedor-carrito-nav">
+            <a href="carrito.html" class="btn-carrito-nav" title="Ver Mi Carrito">
+                🛒
+                <span id="contador-carrito-nav" class="burbuja-contador">0</span>
+            </a>
         </div>
-        <nav class="enlaces-navegacion">
-            <a href="1-inicio.html">Inicio</a>
-            <a href="2-modelos.html">Modelos</a>
-            <a href="mejoras_sueno_perfecto.html">Contacto</a>
-        </nav>
-        <div class="nav-button" style="display: flex; align-items: center; gap: 15px;">
-            <a href="oferta.html" class="btn-ofertas">Ofertas 🔥</a>
-            
-            <div class="contenedor-carrito-nav">
-                <a href="carrito.html" class="btn-carrito-nav" title="Ver Mi Carrito" style="position: relative; text-decoration: none;">
-                    🛒
-                    <span id="contador-carrito-nav" class="burbuja-contador" style="background: #ff4d4d; color: white; border-radius: 50%; padding: 2px 7px; font-size: 12px; margin-left: 5px; display: none;">0</span>
-                </a>
-            </div>
-        </div>
-    </header> <section class="banner">
+    </div>
+</header>
+    <section class="banner">
         <h1>🛏️ Mega Ofertas de Colchones</h1>
         <p>Descansa mejor al mejor precio</p>
         <p>Promoción válida por tiempo limitado</p>
