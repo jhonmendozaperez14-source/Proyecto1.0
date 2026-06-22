@@ -16,10 +16,18 @@
         </div>
         <nav class="enlaces-navegacion">
             <a href="1-inicio.html">Inicio</a>
-            <a href="2-modelos.html" class="active">Modelos</a>
+            <a href="2-modelos.html">Modelos</a>
+            <a href="mejoras_sueno_perfecto.html">Contacto</a>
         </nav>
-        <div class="nav-button">
-            <a href="../paginas/oferta.html" class="btn-ofertas">Ofertas</a>
+        <div class="nav-button" style="display: flex; align-items: center; gap: 15px;">
+            <a href="oferta.html" class="btn-ofertas">Ofertas 🔥</a>
+            
+            <div class="contenedor-carrito-nav">
+                <a href="carrito.html" class="btn-carrito-nav" title="Ver Mi Carrito">
+                    🛒
+                    <span id="contador-carrito-nav" class="burbuja-contador">0</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -95,16 +103,7 @@
         </div>
     </main>
 
-    <div class="seccion-carrito-jhon">
-        <h2>🛒 Carrito de Compras</h2>
-        <ul id="lista-carrito"></ul>
-        <p class="total-carrito">Total: S/ <span id="total">0</span></p>
-        <div class="acciones-carrito">
-            <button onclick="vaciarCarrito()" class="btn-vaciar">Vaciar carrito</button>
-            <a href="centro_pagos.html" class="btn-ir-pagar">COMPRAR AHORA</a>
-        </div>
-    </div>
 
-    <script src="../js/carrito-modelos.js"></script>
+    <script src="../js/detalles.js"></script>
 </body>
 </html>
