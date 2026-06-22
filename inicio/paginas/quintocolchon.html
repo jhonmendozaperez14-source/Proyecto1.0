@@ -11,8 +11,8 @@ function agregarAlCarrito() {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     carrito.push({
-        nombre: "Colchón Premium Comfort",
-        precio: 799
+        nombre: "Colchon Emma Elite",
+        precio: 1999
     });
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -56,7 +56,7 @@ function agregarAlCarrito() {
                 <li>✔ Capacidad máxima: 225 kg</li>
             </ul>
 
-            <a href="..//paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
+             <a href="../paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
              <button onclick="agregarAlCarrito()" class="boton">Agregar al Carrito</button>
         </div>
 

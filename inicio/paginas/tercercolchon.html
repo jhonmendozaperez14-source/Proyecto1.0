@@ -11,8 +11,8 @@ function agregarAlCarrito() {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     carrito.push({
-        nombre: "Colchón Premium Comfort",
-        precio: 799
+        nombre: "Colchón Memory Foam",
+        precio: 999
     });
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -59,7 +59,7 @@ function agregarAlCarrito() {
                 <li>✔ Capacidad máxima: 150 kg</li>
             </ul>
 
-            <a href="../paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
+             <a href="../paginas/centro_pagos.html" class="boton">COMPRAR AHORA</a>
            <button onclick="agregarAlCarrito()" class="boton">
     Agregar al carrito
 </button>
