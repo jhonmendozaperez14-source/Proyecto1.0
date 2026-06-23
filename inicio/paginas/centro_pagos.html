@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../css/centro_pagos.css">
 </head>
 <body>
-    <!-- BANNER -->
     <div class="banner">
         <img class="imagen1" src="../img/pngwing.com.png" alt="Carrito de compras">
         <h1 class="h1">Centro de pagos</h1>
@@ -15,7 +14,6 @@
         <img class="imagen2" src="../img/cama-individual.png" alt="Cama">
     </div>
 
-    <!-- METODOS DE PAGO -->
     <h2 class="h2-pagos">Métodos de pago aceptados</h2>
     <div class="pagos">
         <img src="../img/images.png" alt="Visa">
@@ -23,7 +21,6 @@
         <img src="../img/download.png" alt="Yape/Plin">
     </div>
 
-    <!-- DATOS DE TARJETA -->
     <div class="tarjeta">
         <label for="Numero">Número de tarjeta :</label>
         <input type="text" id="Numero" name="Numero" placeholder="XXXX-XXXX-XXXX-XXXX">
@@ -32,7 +29,6 @@
         <input type="text" id="Fecha" name="Fecha" placeholder="XX/XX">
     </div>
 
-    <!-- DATOS DEL CLIENTE -->
     <div class="Datos-cliente">
         <label for="Nombre">Nombre del cliente</label>
         <input type="text" id="Nombre" placeholder="Nombres completos">
@@ -43,7 +39,6 @@
         <label for="Direccion">Dirección de entrega</label>
         <input type="text" id="Direccion" placeholder="Av. Universitaria...">
     </div>
-    <!--agregado por jhon: Contenedor del Carrito -->
     <div class="panel-resumen-jhon">  
         <h3>Tu Pedido en el Carrito:</h3>
         <div id="resumen-caja"></div>
@@ -58,8 +53,6 @@
 
     <script src="../js/carrito-global.js"></script>
     <script>
-            /*CARRITO INTEGRADA*/
-        /* agregado por jhon */
         function cargarCarritoPasarela() {
             const contenedor = document.getElementById("resumen-caja");
             const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -73,13 +66,11 @@
                 return;
             }
 
-            contenedor.innerHTML = ""; /*Limpiar contenido previo*/
-
+            contenedor.innerHTML = ""; 
             carrito.forEach((prod, indice) => {
                 total += prod.precio;
                 nombresProductos.push(prod.nombre);
-                
-                /*Renderizado con fila limpia y botón eliminar por cada elemento*/
+
                 contenedor.innerHTML += `
                     <div class="item-resumen-fila">
                         <div>
@@ -91,14 +82,12 @@
                 `;
             });
 
-            /*Mostrar Total formateado*/
             contenedor.innerHTML += `
                 <div class="total-pago-caja">
                     Total a Pagar: S/ ${total.toFixed(2)}
                 </div>
             `;
 
-            /*Respaldos requeridos en LocalStorage para tu boleta final*/
             localStorage.setItem("Producto", nombresProductos.join(", "));
             localStorage.setItem("Precio", "S/ " + total.toFixed(2));
         }
@@ -109,7 +98,6 @@
             carrito.splice(indice, 1);
             localStorage.setItem("carrito", JSON.stringify(carrito));
             
-            // Actualiza tanto la visualización de la pasarela como la burbuja del header si existiera
             if (typeof actualizarBurbujaHeader === "function") {
                 actualizarBurbujaHeader();
             }
@@ -119,7 +107,6 @@
         function generarBoleta() {
             const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
             
-            /* validación agregado por jhon */
             if(carrito.length === 0) {
                 const alertaVisual = document.getElementById("error-mensaje-jhon");
                 alertaVisual.style.display = "block";
@@ -133,7 +120,6 @@
             window.location.href = "boleta_de_pago.html";
         }
 
-        /*Renderizar inmediatamente al cargar el documento*/
         document.addEventListener("DOMContentLoaded", () => {
             cargarCarritoPasarela();
         });

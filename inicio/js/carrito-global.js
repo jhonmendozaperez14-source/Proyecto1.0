@@ -1,4 +1,3 @@
-/* 1. FUNCIÓN PRINCIPAL: RENDERIZAR LA PÁGINA INSPIRADO EN TOTTUS*/
 function renderizarPaginaCarro() {
     const contenedor = document.getElementById("contenedor-items-lista-carro");
     const cantTit = document.getElementById("cantidad-productos-tit");
@@ -33,7 +32,6 @@ function renderizarPaginaCarro() {
 
     const listaNombres = Object.keys(productosAgrupados);
 
-/*Si el carro está totalmente vacío*/
     if (listaNombres.length === 0) {
         // Detectar si venía de ofertas o de modelos
         let textoVolver = "Ver Modelos Disponibles";
@@ -56,7 +54,6 @@ function renderizarPaginaCarro() {
         totalDinero += prod.subtotal;
         totalUnidades += prod.cantidad;
 
-        /*BÚSQUEDA ROBUSTA INTEGRADA*/
         let rutaImagen = "../img/ColchonPremiun.avif"; 
         
         if (typeof baseDeDatos !== "undefined") {
@@ -104,7 +101,6 @@ function renderizarPaginaCarro() {
     }
 }
 
-/*2. LOGICA DE CONTROL DE UNIDADES*/
 function modificarCantidad(nombreProducto, cambio) {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     
@@ -138,8 +134,7 @@ function vaciarCarritoCompleto() {
 
 document.addEventListener("DOMContentLoaded", () => {
     renderizarPaginaCarro();
-    /*Lógica para el botón Seguir Comprando del resumen*/
-    const btnSeguir = document.getElementById("btn-seguir-comprando");
+        const btnSeguir = document.getElementById("btn-seguir-comprando");
     if (btnSeguir) {
         btnSeguir.addEventListener("click", () => {
             if (document.referrer.includes("oferta.html")) {

@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mejoras SueñoPerfecto - Garantía y Contacto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style copy.css">
     <link rel="stylesheet" href="../css/global.css">
-    
+
 </head>
-
-<body>
-
-    <header class="navbar"> <!--agregado por JHON= todo el header-->
+<header class="navbar">
     <div class="logo">
         <span class="icon">🛏️</span>
         <strong>SueñoPerfecto</strong>
@@ -20,22 +17,16 @@
     <nav class="enlaces-navegacion">
         <a href="1-inicio.html">Inicio</a>
         <a href="2-modelos.html">Modelos</a>
-        <a href="mejoras_sueno_perfecto.html">Contacto</a>
+        <a href="mejoras_sueno_perfecto copy.html">Contacto</a>
     </nav>
     <div class="nav-button" style="display: flex; align-items: center; gap: 15px;">
         <a href="oferta.html" class="btn-ofertas">Ofertas 🔥</a>
         
-        <div class="contenedor-carrito-nav">
-            <a href="carrito.html" class="btn-carrito-nav" title="Ver Mi Carrito">
-                🛒
-                <span id="contador-carrito-nav" class="burbuja-contador">0</span>
-            </a>
-        </div>
-    </div>
+       
 </header>
 
+<body>
 
-    <!-- SECCIÓN GARANTÍA -->
     <section>
         <h2>Nuestra Garantía de Descanso</h2>
         <p>Tu tranquilidad y salud están protegidas desde el primer día.</p>
@@ -69,13 +60,13 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO -->
+
     <section id="contacto">
         <h2>¿Tienes alguna duda? Contáctanos</h2>
         <p>Estamos aquí para ayudarte a elegir el colchón de tus sueños.</p>
 
         <div class="cuadrilla-contacto">
-            <!-- Bloque Izquierdo: Información y Canales Rápidos -->
+
             <div class="info-contacto">
 
                 <h3>Atención Directa</h3>
@@ -90,6 +81,11 @@
                     <span>ventas@suenoperfecto.com</span>
                 </div>
 
+                <div class="elemento-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Lima, Perú</span>
+                </div>
+
                 <div class="horario-atencion">
                     <i class="far fa-clock"></i> <strong>Horario de atención:</strong><br>
                     Lunes a Sábado: 9:00 AM - 7:00 PM<br>
@@ -101,12 +97,17 @@
                     <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp (Respuesta Inmediata)
                 </a>
 
+                <div class="contenedor-mapa">
+                    <div class="marcador-mapa">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <strong>Centro de Distribución Central</strong>
+                        <span>Lima, Perú (Despachos a todo el país)</span>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Bloque Derecho: Formulario de Contacto Optimizado -->
+
             <div class="contenedor-formulario">
                 <form action="#" method="POST">
-                    
                     <div class="grupo-formulario">
                         <label for="nombre">Nombre Completo</label>
                         <input type="text" id="nombre" class="campo-formulario" placeholder="Ej. Juan Pérez" required>
@@ -135,7 +136,12 @@
                             placeholder="Escribe aquí tu mensaje en detalle..." required></textarea>
                     </div>
 
-                    <button type="submit" class="boton-enviar">Enviar Consulta</button>
+                    <div class="zona-formulario">
+
+                        <a href="#enviado" class="boton-enviar">Enviar Consulta</a>
+                    </div>
+
+
 
                     <div class="pie-formulario">
                         <i class="fas fa-lock"></i> Tu información está protegida. Respondemos en menos de 24 horas.
@@ -145,6 +151,28 @@
         </div>
     </section>
 
-</body>
 
-</html>
+    <div id="enviado" class="seccion-confirmacion">
+        <div class="check-icono">
+            <i class="far fa-check-circle"></i>
+        </div>
+        <h2>Enviado</h2>
+        <p>Muchas gracias estaremos respondiéndote lo más pronto posible.</p>
+
+
+        <a href="#" class="btn-ok">OK</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const botonOk = document.querySelector('.btn-ok');
+            const formulario = document.querySelector('form');
+
+            if (botonOk && formulario) {
+                botonOk.addEventListener('click', function () {
+                    formulario.reset(); // Esto vacía todos los campos automáticamente
+                });
+            }
+        });
+    </script>
+</body>

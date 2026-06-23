@@ -6,7 +6,6 @@ body {
     color: #333;
 }
 
-/* Banner Principal */
 .banner {
     background: linear-gradient(135deg, #0056b3, #007bff);
     color: white;
@@ -36,7 +35,6 @@ body {
     width: auto;
 }
 
-/* Métodos de Pago */
 .h2-pagos {
     text-align: center;
     margin-top: 30px;
@@ -57,7 +55,6 @@ body {
     filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
 }
 
-/* Estructura de Cajas (Formularios y Resumen) */
 .tarjeta, .Datos-cliente, .panel-resumen-jhon {
     background: white;
     max-width: 550px;
@@ -92,7 +89,6 @@ input[type="text"]:focus {
     outline: none;
 }
 
-/* agregado por jhon: Estilos del Carrito */
 .panel-resumen-jhon h3 {
     margin-top: 0;
     border-bottom: 2px solid #007bff;
@@ -130,7 +126,6 @@ input[type="text"]:focus {
     color: #2b6cb0;
 }
 
-/* Mensaje de Error */
 .msg-error-jhon {
     display: none;
     background-color: #fff5f5;
@@ -142,7 +137,6 @@ input[type="text"]:focus {
     font-weight: 500;
 }
 
-/* Botonera Inferior */
 .botones {
     display: flex;
     justify-content: center;

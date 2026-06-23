@@ -1,4 +1,3 @@
-/*ESTILOS GENERALES Y MÁRGENES*/
 body {
     margin: 0;
     padding: 0;
@@ -7,14 +6,12 @@ body {
     color: #333;
 }
 
-/*Espaciados controlados para que el contenido no toque los bordes*/
 .bienvenida, .modelos-destacados, .tecnologia, .testimonios-seccion {
     max-width: 1280px;
     margin: 0 auto;
     padding: 60px 40px;
 }
 
-/*menu*/
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -24,8 +21,6 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-
-/*Bienvenida*/
 .bienvenida {
     display: flex;
     align-items: center;
@@ -40,14 +35,14 @@ body {
 }
 
 .texto-principal h1 {
-    font-size: 48px; /* Corregido para que destaque como título principal */
+    font-size: 48px;
     line-height: 1.2;
     color: #1e272e;
     margin: 20px 0;
 }
 
 .texto-principal p {
-    font-size: 18px; /* Ajustado para que el párrafo sea legible */
+    font-size: 18px; 
     color: #57606f;
     line-height: 1.6;
     margin-bottom: 30px;
@@ -117,7 +112,6 @@ body {
     object-fit: cover;
 }
 
-/*targetas de los modelos favoritos*/
 .tarjeta-info {
     padding: 22px;
     display: flex;
@@ -178,7 +172,6 @@ body {
 .tag-popular { background: #e74c3c; }
 .tag-premium { background: #f39c12; }
 
-/*seccion veneficios*/
 .tecnologia {
     background-color: #ffffff;
     border-radius: 24px;
@@ -256,7 +249,6 @@ body {
     color: #0f172a;
 }
 
-/*seccion testimonios*/
 .testimonios-seccion {
     background-color: #f8fafc;
     text-align: center;
@@ -279,7 +271,6 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
 }
 
-/*franja confianza*/
 .franja-confianza-footer {
     background-color: #0f172a;
     color: #ffffff;

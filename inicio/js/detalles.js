@@ -1,4 +1,3 @@
-/*1. BASE DE DATOS DE MODELOS*/
 const baseDeDatos = {
     emma: {
         titulo: "Emma Elite",
@@ -96,7 +95,6 @@ const baseDeDatos = {
 };
 
 
-/*2. LÓGICA GLOBAL DE LA BURBUJA DEL MENU*/
 function actualizarBurbujaHeader() {
     const burbuja = document.getElementById("contador-carrito-nav");
     if (burbuja) {
@@ -106,7 +104,6 @@ function actualizarBurbujaHeader() {
     }
 }
 
-/*Notificación elegante*/
 function mostrarNotificacionToast(mensaje) {
     let contenedor = document.getElementById("toast-container-global");
     if (!contenedor) {
@@ -151,7 +148,6 @@ function mostrarNotificacionToast(mensaje) {
     }, 3500);
 }
 
-/*Añadir productos al localStorage*/
 function agregar(nombre, precio) {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     carrito.push({
@@ -168,7 +164,6 @@ function agregar(nombre, precio) {
     }
 }
 
-/*3. VISTA DEL CARRITO INFERIOR (Compatibilidad)*/
 function cargarCarrito() {
     const lista = document.getElementById("lista-carrito");
     const totalElemento = document.getElementById("total");
@@ -208,7 +203,6 @@ function vaciarCarrito() {
     actualizarBurbujaHeader();
 }
 
-/*4. CARGA DINÁMICA DE DETALLES POR URL*/
 document.addEventListener("DOMContentLoaded", () => {
     actualizarBurbujaHeader();
     cargarCarrito();
